@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-b10-search',
+  selector: 'b10-search',
   templateUrl: './b10-search.component.html',
   styleUrls: ['./b10-search.component.css']
 })
