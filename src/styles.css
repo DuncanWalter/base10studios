@@ -17,3 +17,11 @@
 .input:active { border: none; }
 .input:valid { border: none; }
 .input:focus { border: none; }
+
+.card .card-content .content p {
+  margin-bottom: 1rem;
+}
+.card .card-content .content h6 {
+  margin-bottom: 0.75rem;
+  margin-top: 2.25rem;
+}

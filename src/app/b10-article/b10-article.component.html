@@ -1,12 +1,21 @@
 <b10-header></b10-header>
 <div class="row container">
-  <div class="col 12s">
-    <div id="" class="card white">
-      <div class="card-content">
-        <h3>{{title}}</h3>
+  <div class="col s12">
+    <div id="" class="card blue lighten-5 blue-text text-darken-4">
+      <div class="card-content center-align">
+        <h3><b>[</b> {{title}} <b>]</b></h3>
       </div>
-      <div class="card-content">
-        <p>{{content}}</p>
+      <div class="card-image">
+        <img src="../../assets/Embers.jpg" style="object-fit:cover;max-height:80pt;">
+      </div>
+      <div style="padding-top:23px" class="card-content blue lighten-4">
+        <div style="width:89%;margin-left:5.5%;" class="content" id="content"></div>
+      </div>
+      <div class="card-content blue lighten-3 center-align">
+        <a routerLink="/contacts" fragment="top" routerLinkActive="active" class="blue-text text-darken-4">
+          <p>CREATED BY</p>
+          <p><b> [ </b><b class="white-text">SL4M</b><b> | </b><b class="black-text">E3LS</b><b> ] </b></p>
+        </a>
       </div>
     </div>
   </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {B10ArticlesService} from "../b10-articles.service";
+declare var $: any;
 
 
 @Component({
@@ -24,9 +25,11 @@ export class B10ArticleComponent implements OnInit {
         (article) => {
           this.title = article.title;
           this.content = article.content;
+          $("#content").load("assets/article.html");
         }
       )
     );
+
   }
 
 }
