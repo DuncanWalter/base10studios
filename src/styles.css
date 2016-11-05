@@ -1,8 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
-.cover{
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-repeat: no-repeat;
+.square {
+  position: relative;
 }
+
+.square:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.input {
+  border: none;
+}
+
+.input:hover { border: none; }
+.input:active { border: none; }
+.input:valid { border: none; }
+.input:focus { border: none; }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { B10ArticlesService } from "../b10-articles.service";
 
 @Component({
   selector: 'app-b10-home',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class B10HomeComponent implements OnInit {
 
-  constructor() { }
+  articles = [];
+
+  constructor(private articlesService: B10ArticlesService){}
 
   ngOnInit() {
+    this.articlesService.getArticles((article) => {
+      console.dir(article);
+      this.articles.push(article);
+    });
   }
 
 }
