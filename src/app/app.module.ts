@@ -11,6 +11,7 @@ import { B10HeaderComponent } from './b10-header/b10-header.component';
 import { B10ContactsComponent } from './b10-contacts/b10-contacts.component';
 import { B10ArticlesService } from "./b10-articles.service";
 import { B10ArticleComponent } from './b10-article/b10-article.component';
+import { B10ArticlePanelsComponent } from './b10-article-panels/b10-article-panels.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { B10ArticleComponent } from './b10-article/b10-article.component';
     B10SearchComponent,
     B10HeaderComponent,
     B10ContactsComponent,
-    B10ArticleComponent
+    B10ArticleComponent,
+    B10ArticlePanelsComponent
   ],
   imports: [
     BrowserModule,
@@ -31,9 +33,28 @@ import { B10ArticleComponent } from './b10-article/b10-article.component';
         redirectTo: '/home',
         pathMatch: 'full'
       },
-      { path: 'home', component: B10HomeComponent },
-      { path: 'home/:article', component: B10ArticleComponent },
-      { path: 'contacts', component: B10ContactsComponent }
+      {
+        path: 'home',
+        component: B10HeaderComponent,
+        children: [
+          {
+            path: 'articles',
+            component: B10ArticlePanelsComponent
+          },
+          {
+            path: 'articles/:article',
+            component: B10ArticleComponent
+          },
+          {
+            path: 'contacts',
+            component: B10ContactsComponent
+          },
+          {
+            path:'',
+            component: null
+          }
+        ]
+      }
     ])
   ],
   providers: [

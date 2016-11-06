@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+declare var $: any;
 
 @Component({
   selector: 'b10-header',
@@ -7,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class B10HeaderComponent implements OnInit {
 
+  static paint(color){
+    $("#header-color-panel").css("background-color", color);
+    $("#header-container").css("color", color);
+  }
+
   constructor() { }
 
   ngOnInit() {
-
+    B10HeaderComponent.paint("#555555");
   }
 
 }

@@ -1,22 +1,23 @@
-<div class="row container grey-text text-darken-2 center-align" style="margin-bottom:12px; margin-top:18px">
+<div id="header-container" class="row container center-align" style="margin-bottom:12px; margin-top:18px">
   <div class="col s12">
     <div class="white hoverable row" style="margin: 0; padding-bottom: 8px">
       <div class="col s12"><!--style="margin-bottom: 8px;"-->
-        <div class="grey card-panel darken-2" style="margin-bottom: 8px">
+        <div id="header-color-panel" class="card-panel" style="margin-bottom: 8px">
           <h1 class="center-align white-text">
             BASE [10] STUDIOS
           </h1>
         </div>
       </div>
       <div class="col s4">
-        <a routerLink="/home" id="btn1" class="btn-flat white waves-effect waves-purple center-align" style="width:100%"><b>ABOUT</b></a>
+        <a routerLink="/home/articles" id="btn1" class="btn-flat white waves-effect waves-white center-align" style="width:100%"><b>ABOUT</b></a>
       </div>
       <div class="col s4">
         <b10-search></b10-search>
       </div>
       <div class="col s4">
-        <a routerLink="/contacts" id="btn2" class="btn-flat white waves-effect waves-green center-align" style="width:100%"><b>TEAM</b></a>
+        <a routerLink="/home/contacts" id="btn2" class="btn-flat white waves-effect waves-white center-align" style="width:100%"><b>TEAM</b></a>
       </div>
     </div>
   </div>
 </div>
+<router-outlet></router-outlet>

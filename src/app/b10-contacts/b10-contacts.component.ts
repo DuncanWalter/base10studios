@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {B10HeaderComponent} from "../b10-header/b10-header.component";
 
 @Component({
   selector: 'app-b10-contacts',
@@ -9,7 +10,8 @@ export class B10ContactsComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(){
+    B10HeaderComponent.paint("#555555");
   }
 
 }
