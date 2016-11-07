@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+declare var firebase: any;
 declare var $: any;
 
 @Component({
@@ -8,6 +9,8 @@ declare var $: any;
 })
 export class B10HeaderComponent implements OnInit {
 
+  firebase: any;
+
   static paint(color){
     $("#header-color-panel").css("background-color", color);
     $("#header-container").css("color", color);
@@ -15,7 +18,8 @@ export class B10HeaderComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(){
+    this.firebase = firebase;
     B10HeaderComponent.paint("#555555");
   }
 

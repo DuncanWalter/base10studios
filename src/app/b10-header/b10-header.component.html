@@ -1,23 +1,39 @@
-<div id="header-container" class="row container center-align" style="margin-bottom:12px; margin-top:18px">
+<div id="header-container" class="row container center-align" style="padding-bottom:0;margin-top:1.5rem;">
   <div class="col s12">
-    <div class="white hoverable row" style="margin: 0; padding-bottom: 8px">
-      <div class="col s12"><!--style="margin-bottom: 8px;"-->
-        <div id="header-color-panel" class="card-panel" style="margin-bottom: 8px">
-          <h1 class="center-align white-text">
-            BASE [10] STUDIOS
-          </h1>
+    <div class="card" style="margin: 0;">
+      <div id="header-color-panel" class="card-content center-align white-text">
+        <h1>BASE [10] STUDIOS</h1>
+      </div>
+      <div class="card-content white">
+        <div class="row" style="margin:0">
+          <div class="col s4">
+            <a routerLink="/home/articles" id="btn1" class="btn-flat white waves-effect waves-white center-align" style="width:100%"><b>ABOUT</b></a>
+          </div>
+          <div class="col s4">
+            <b10-search></b10-search>
+          </div>
+          <div class="col s4">
+            <a routerLink="/home/contacts" id="btn2" class="btn-flat white waves-effect waves-white center-align" style="width:100%"><b>TEAM</b></a>
+          </div>
         </div>
-      </div>
-      <div class="col s4">
-        <a routerLink="/home/articles" id="btn1" class="btn-flat white waves-effect waves-white center-align" style="width:100%"><b>ABOUT</b></a>
-      </div>
-      <div class="col s4">
-        <b10-search></b10-search>
-      </div>
-      <div class="col s4">
-        <a routerLink="/home/contacts" id="btn2" class="btn-flat white waves-effect waves-white center-align" style="width:100%"><b>TEAM</b></a>
       </div>
     </div>
   </div>
 </div>
+
 <router-outlet></router-outlet>
+
+<div style="position:relative;top:-1.5rem;" class="row container center align">
+  <div class="col s12">
+    <div class="card">
+      <div class="card-content grey darken-2">
+        <a *ngIf="firebase.User==null" routerLink="/home/login" routerLinkActive="active">
+          <p class="grey-text text-darken-3">LOGIN</p>
+        </a>
+        <a *ngIf="firebase.User!=null" routerLink="/home/articles/upload" routerLinkActive="active">
+          <p class="grey-text text-darken-3">UPLOAD</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

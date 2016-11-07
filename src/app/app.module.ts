@@ -12,6 +12,8 @@ import { B10ContactsComponent } from './b10-contacts/b10-contacts.component';
 import { B10ArticlesService } from "./b10-articles.service";
 import { B10ArticleComponent } from './b10-article/b10-article.component';
 import { B10ArticlePanelsComponent } from './b10-article-panels/b10-article-panels.component';
+import { B10ArticleUploadComponent } from './b10-article-upload/b10-article-upload.component';
+import { B10LoginComponent } from './b10-login/b10-login.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { B10ArticlePanelsComponent } from './b10-article-panels/b10-article-pane
     B10HeaderComponent,
     B10ContactsComponent,
     B10ArticleComponent,
-    B10ArticlePanelsComponent
+    B10ArticlePanelsComponent,
+    B10ArticleUploadComponent,
+    B10LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -42,6 +46,10 @@ import { B10ArticlePanelsComponent } from './b10-article-panels/b10-article-pane
             component: B10ArticlePanelsComponent
           },
           {
+            path:'articles/upload',
+            component: B10ArticleUploadComponent
+          },
+          {
             path: 'articles/:article',
             component: B10ArticleComponent
           },
@@ -52,6 +60,10 @@ import { B10ArticlePanelsComponent } from './b10-article-panels/b10-article-pane
           {
             path:'',
             component: null
+          },
+          {
+            path:'login',
+            component: B10LoginComponent
           }
         ]
       }

@@ -6,26 +6,18 @@ export class B10ArticlesService {
 
   /*fetches a list of all article stubs*/ // TODO get this to fetch ranges by default and keep track of itself.
   getArticles(callback){
-    firebase.database().ref('/articles').once('value',
-      (snapshot) => {
-        if(callback == null){
-          let snap = snapshot.val();
-          if(!snap.key){
-            snap.key = snapshot.key;
-          }
-          console.dir(snap);
-        } else {
+    return Promise.resolve(
+      firebase.database().ref('/articles').once('value',
+        (snapshot) => {
           snapshot.forEach(
             (article) => {
               let art = article.val();
-              if(!art.key){
-                art.key = article.key;
-              }
+              art.key = article.key;
               callback(art);
             }
           );
         }
-      }
+      )
     );
   }
   /*fetches a single article stub*/
