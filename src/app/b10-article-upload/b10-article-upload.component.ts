@@ -60,13 +60,13 @@ export class B10ArticleUploadComponent implements OnInit, OnDestroy {
 
   changeHue(hue){
     this.hue = hue;
-    let color = {h: hue, s: 14, v: 94};
+    let color = {h: hue, s: 10, v: 99};
     this.bgColorLight = B10ArticleUploadComponent.toRGBColor(color);
-    color.s = 23; color.v = 89;
+    color.s = 25; color.v = 98;
     this.bgColorMed   = B10ArticleUploadComponent.toRGBColor(color);
-    color.s = 32; color.v = 85;
+    color.s = 42; color.v = 98;
     this.bgColorDark  = B10ArticleUploadComponent.toRGBColor(color);
-    color.s = 89; color.v = 46;
+    color.s = 92; color.v = 63;
     this.color        = B10ArticleUploadComponent.toRGBColor(color);
     B10HeaderComponent.paint(this.color);
     $('.thumb').css('background-color', this.color);

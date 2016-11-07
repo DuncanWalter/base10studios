@@ -56,3 +56,13 @@ input[type=range]::-moz-range-thumb{
 input[type=range]::-ms-thumb{
   background-color: inherit;
 }
+
+input[type=file]{
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  opacity:0;
+  -webkit-filter: alpha(opacity=0);
+}
