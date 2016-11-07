@@ -10,13 +10,26 @@
     <div id="upload-panel" class="card" [style.color]="color">
       <div class="card-content">
         <input class="validate center-align" type="text" [(ngModel)]="title" placeholder="TITLE">
-        <input class="" placeholder="ARTICLE" type="file" [(ngModel)]="article">
-        <input class="" placeholder="IMAGE" type="file" [(ngModel)]="image">
+        <div class="file-field input-field">
+          <div class="btn" [style.background-color]="color">
+            <span style="cursor:pointer">ARTICLE</span>
+            <input type="file" [(ngModel)]="article">
+          </div>
+        </div>
+        <div class="file-field input-field">
+          <div class="btn" [style.background-color]="color">
+            <span style="cursor:pointer">IMAGE</span>
+            <input type="file" [(ngModel)]="image">
+          </div>
+        </div>
       </div>
       <div class="card-content">
         <p class="range-field">
-          <input type="range" [(ngModel)]="hue" min="0" max="360">
+          <input type="range" [(ngModel)]="hue" [style.color]="color" [style.background-color]="color" min="0" max="360">
         </p>
+        <button class="btn-flat white waves-effect waves-white center-align" [style.color]="color" style="width:100%">
+          SUBMIT
+        </button>
       </div>
     </div>
   </div>

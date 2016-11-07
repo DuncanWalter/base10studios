@@ -23,14 +23,15 @@ export class B10LoginComponent implements OnInit {
 
     firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(
       () => {
-        this.statusColor = "#12fa56";
-        B10HeaderComponent.paint("#12fa56");
-        this.status = "AND THERE WAS MUCH REJOICING!!!";
+        this.statusColor = "#08a719";
+        B10HeaderComponent.paint("#08a719");
+        this.status = "Welcome back, friend";
+        firebase.User = firebase.User || "oneOneBlueHumanCreatureToken";
       },
-      () => {
+      (error) => {
         this.statusColor = "#fa1256";
         B10HeaderComponent.paint("#fa1256");
-        this.status = "Perhaps a different wand?";
+        this.status = "Please double check your credentials; we didn't find anything";
       }
     );
   }
@@ -39,14 +40,14 @@ export class B10LoginComponent implements OnInit {
 
     firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(
       () => {
-        this.statusColor = "#12fa56";
-        B10HeaderComponent.paint("#12fa56");
-        this.status = "AND THERE WAS MUCH REJOICING!!!";
+        this.statusColor = "#08a719";
+        B10HeaderComponent.paint("#08a719");
+        this.status = "Welcome to the fold, friend";
       },
       () => {
         this.statusColor = "#fa1256";
         B10HeaderComponent.paint("#fa1256");
-        this.status = "Perhaps a different wand?";
+        this.status = "We're not saying we don't want you, but...";
       }
     );
   }
@@ -58,7 +59,7 @@ export class B10LoginComponent implements OnInit {
 
     B10HeaderComponent.paint("#555555");
 
-    this.status = "We send no emails. Rest easy.";
+    this.status = "We send no emails; Rest easy";
     this.statusColor = "#a9a9a9";
 
   }

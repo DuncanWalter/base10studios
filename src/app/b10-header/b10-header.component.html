@@ -27,12 +27,17 @@
   <div class="col s12">
     <div class="card">
       <div class="card-content grey darken-2">
-        <a *ngIf="firebase.User==null" routerLink="/home/login" routerLinkActive="active">
-          <p class="grey-text text-darken-3">LOGIN</p>
-        </a>
-        <a *ngIf="firebase.User!=null" routerLink="/home/articles/upload" routerLinkActive="active">
-          <p class="grey-text text-darken-3">UPLOAD</p>
-        </a>
+        <p class="grey-text text-darken-3">
+          <a *ngIf="firebase.User==null" class="grey-text text-darken-3" routerLink="/home/login" routerLinkActive="active">
+            LOGIN
+          </a>
+          <a *ngIf="firebase.User!=null" class="grey-text text-darken-3" routerLink="/home/articles/upload" routerLinkActive="active">
+            UPLOAD  |
+          </a>
+          <a *ngIf="firebase.User!=null" class="grey-text text-darken-3" (click)="logout()" style="cursor:pointer;">
+            LOGOUT
+          </a>
+        </p>
       </div>
     </div>
   </div>

@@ -41,13 +41,18 @@
   margin-top: 0;
 }
 
-/*.ul {*/
-  /*padding:0;*/
-  /*margin:0;*/
+/*input[type=range] + .thumb .value {*/
+  /*background-color: inherit;*/
 /*}*/
-
-/*.li {*/
-  /*padding:0;*/
-  /*margin:0;*/
-/*}*/
-
+input[type=range] + .thumb {
+  background-color: inherit;
+}
+input[type=range]::-webkit-slider-thumb{
+  background-color: inherit;
+}
+input[type=range]::-moz-range-thumb{
+  background-color: inherit;
+}
+input[type=range]::-ms-thumb{
+  background-color: inherit;
+}

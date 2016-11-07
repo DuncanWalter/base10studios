@@ -16,6 +16,14 @@ export class B10HeaderComponent implements OnInit {
     $("#header-container").css("color", color);
   }
 
+  logout(){
+    firebase.auth().signOut().then(
+      () => {
+        firebase.User = null;
+      }
+    )
+  }
+
   constructor() { }
 
   ngOnInit(){

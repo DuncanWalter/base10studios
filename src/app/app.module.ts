@@ -34,7 +34,7 @@ import { B10LoginComponent } from './b10-login/b10-login.component';
     RouterModule.forRoot([
       {
         path: '',
-        redirectTo: '/home',
+        redirectTo: '/home/articles',
         pathMatch: 'full'
       },
       {
@@ -56,10 +56,6 @@ import { B10LoginComponent } from './b10-login/b10-login.component';
           {
             path: 'contacts',
             component: B10ContactsComponent
-          },
-          {
-            path:'',
-            component: null
           },
           {
             path:'login',

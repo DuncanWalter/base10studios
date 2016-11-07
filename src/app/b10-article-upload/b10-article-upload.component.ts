@@ -69,6 +69,8 @@ export class B10ArticleUploadComponent implements OnInit, OnDestroy {
     color.s = 89; color.v = 46;
     this.color        = B10ArticleUploadComponent.toRGBColor(color);
     B10HeaderComponent.paint(this.color);
+    $('.thumb').css('background-color', this.color);
+    $('.value').css('color', this.bgColorDark);
   }
 
   ngOnInit(){
