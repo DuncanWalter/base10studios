@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import {B10HeaderComponent} from "../b10-header/b10-header.component";
+declare var firebase: any;
 declare var $: any;
 
 @Component({
@@ -16,8 +17,8 @@ export class B10ArticleUploadComponent implements OnInit, OnDestroy {
 
   // article data
   title;
-  article;
-  image;
+  articles;
+  images;
   bgColorLight;
   bgColorMed;
   bgColorDark;
@@ -59,7 +60,7 @@ export class B10ArticleUploadComponent implements OnInit, OnDestroy {
   };
 
   changeHue(hue){
-    this.hue = hue;
+    this.hue = hue || this.hue;
     let color = {h: hue, s: 10, v: 99};
     this.bgColorLight = B10ArticleUploadComponent.toRGBColor(color);
     color.s = 25; color.v = 98;
@@ -86,6 +87,40 @@ export class B10ArticleUploadComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(){
     clearInterval(this.interval);
+  }
+
+  uploadArticle(){
+
+    this.articles = $('#upload-file-art')[0];
+    this.images = $('#upload-file-img')[0];
+
+    console.dir(this.articles);
+
+    if(this.articles.files[0] == null){console.log('no article'); return false}
+    if(this.images.files[0]   == null){console.log('no image');   return false}
+    if(this.title   == null){console.log(this.title); return false}
+
+    let key = firebase.database().ref('articles').push(
+      {
+        bgColorLight: this.bgColorLight,
+        bgColorMed: this.bgColorMed,
+        bgColorDark: this.bgColorDark,
+        color: this.color,
+        title: this.title,
+      },
+      () => {
+        firebase.database().ref('articles/' + key + '/article').set('/articles/' + key + ".html");
+        firebase.database().ref('articles/' + key + '/image'  ).set('/images/'   + key + ".png" );
+      }
+    ).key;
+
+    firebase.storage().ref().child('/articles/' + key + '.html').put(this.articles.files[0]);
+    firebase.storage().ref().child('/images/'   + key + '.png' ).put(this.images.files[0]).then(
+      () => {}
+    ).catch(
+      () => {}
+    );
+
   }
 
 }

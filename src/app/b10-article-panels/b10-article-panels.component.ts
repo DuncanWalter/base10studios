@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import {B10ArticlesService} from "../b10-articles.service";
 import {B10HeaderComponent} from "../b10-header/b10-header.component";
 import {AppComponent} from "../app.component";
+declare var firebase: any;
 
 @Component({
   selector: 'app-b10-article-panels',
@@ -10,9 +11,11 @@ import {AppComponent} from "../app.component";
 })
 export class B10ArticlePanelsComponent implements OnInit, OnDestroy {
 
+  interval;
   rowCount = 0;
   articles = [];
   layout = [];
+  tracked = 0;
 
   packArticles = (() => {
     let n = this.rowCount;
@@ -25,8 +28,9 @@ export class B10ArticlePanelsComponent implements OnInit, OnDestroy {
     if(AppComponent.isMobileDevice()){
       this.rowCount = 1;
     }
-    if(n != this.rowCount){
+    if(n != this.rowCount || this.articles.length != this.tracked){
       this.layout = [];
+      this.tracked = 0;
       let i;
       for(i = 0; i < this.rowCount; i++){
         this.layout.push([]);
@@ -41,6 +45,7 @@ export class B10ArticlePanelsComponent implements OnInit, OnDestroy {
             trg = ((min == null) || (h == min)) ? i : trg;
           }
           this.layout[trg].push(article);
+          this.tracked += 1;
         }
       )
     }
@@ -52,13 +57,19 @@ export class B10ArticlePanelsComponent implements OnInit, OnDestroy {
 
     B10HeaderComponent.paint("#555555");
 
-    // TODO should probably close this up at some point?
-    window.addEventListener("resize",
-      this.packArticles
-    );
+    this.interval = setInterval(this.packArticles, 30);
 
     this.articlesService.getArticles((article) => {
-      this.articles.push(article);
+      firebase.storage().ref().child(article.image).getDownloadURL().then(
+        (url) => {
+          article.imageURL = url;
+          this.articles.push(article);
+        }
+      ).catch(
+        (error) => {
+          console.log(error);
+        }
+      );
     }).then(
       this.packArticles
     );
@@ -67,7 +78,7 @@ export class B10ArticlePanelsComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(){
 
-    window.removeEventListener("resize");
+    clearInterval(this.interval);
 
   }
 

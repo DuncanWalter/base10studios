@@ -1,9 +1,9 @@
 <div class="row container">
   <div class="col s2">
     <div class="card" [style.height]="height + 'px'">
-      <div id="preview-l-1" class="card-content" [style.background-color]="bgColorLight" [style.height]="height/3 + 'px'"></div>
-      <div id="preview-l-2" class="card-content" [style.background-color]="bgColorMed" [style.height]="height/3 + 'px'"></div>
-      <div id="preview-l-3" class="card-content" [style.background-color]="bgColorDark" [style.height]="height/3 + 'px'"></div>
+      <div class="card-content" [style.background-color]="bgColorLight" [style.height]="height/3 + 'px'"></div>
+      <div class="card-content" [style.background-color]="bgColorMed" [style.height]="height/3 + 'px'"></div>
+      <div class="card-content" [style.background-color]="bgColorDark" [style.height]="height/3 + 'px'"></div>
     </div>
   </div>
   <div class="col s8">
@@ -12,12 +12,15 @@
         <input class="center-align" type="text" [(ngModel)]="title" placeholder="TITLE" style="font-size:37px">
         <div style="position:relative;" class="btn waves-effect waves-white center-align" [style.background-color]="color">
           ARTICLE
-          <input type="file" [(ngModel)]="article">
+          <input id="upload-file-art" type="file">
         </div>
         <div style="position:relative;" class="btn waves-effect waves-white center-align" [style.background-color]="color">
           IMAGE
-          <input type="file" [(ngModel)]="image">
+          <input id="upload-file-img" type="file">
         </div>
+      </div>
+      <div class="card-content" [style.background-color]="bgColorMed">
+
       </div>
       <div class="card-content">
         <p class="range-field">
@@ -25,7 +28,7 @@
         </p>
       </div>
       <div class="card-content">
-        <button class="btn-flat white waves-effect waves-white center-align" [style.color]="color" style="width:100%">
+        <button (click)="uploadArticle()" class="btn-flat white waves-effect waves-white center-align" [style.color]="color" style="width:100%">
           SUBMIT
         </button>
       </div>
@@ -33,9 +36,9 @@
   </div>
   <div class="col s2">
     <div class="card" [style.height]="height + 'px'">
-      <div id="preview-r-1" class="card-content" [style.background-color]="bgColorLight" [style.height]="height/3 + 'px'"></div>
-      <div id="preview-r-2" class="card-content" [style.background-color]="bgColorMed" [style.height]="height/3 + 'px'"></div>
-      <div id="preview-r-3" class="card-content" [style.background-color]="bgColorDark" [style.height]="height/3 + 'px'"></div>
+      <div class="card-content" [style.background-color]="bgColorLight" [style.height]="height/3 + 'px'"></div>
+      <div class="card-content" [style.background-color]="bgColorMed" [style.height]="height/3 + 'px'"></div>
+      <div class="card-content" [style.background-color]="bgColorDark" [style.height]="height/3 + 'px'"></div>
     </div>
   </div>
 </div>
