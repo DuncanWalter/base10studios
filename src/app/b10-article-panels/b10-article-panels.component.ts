@@ -3,6 +3,7 @@ import {B10ArticlesService} from "../b10-articles.service";
 import {B10HeaderComponent} from "../b10-header/b10-header.component";
 import {AppComponent} from "../app.component";
 declare var firebase: any;
+declare var $: any;
 
 @Component({
   selector: 'app-b10-article-panels',
@@ -60,10 +61,10 @@ export class B10ArticlePanelsComponent implements OnInit, OnDestroy {
     this.interval = setInterval(this.packArticles, 30);
 
     this.articlesService.getArticles((article) => {
+      this.articles.push(article);
       firebase.storage().ref().child(article.image).getDownloadURL().then(
         (url) => {
-          article.imageURL = url;
-          this.articles.push(article);
+          $('#' + article.key).attr("src", url);
         }
       ).catch(
         (error) => {

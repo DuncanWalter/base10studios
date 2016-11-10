@@ -26,36 +26,36 @@ export class B10ArticleComponent implements OnInit {
 
   ngOnInit(){
 
-    this.articlesService.getArticle(this.route.snapshot.params['article'],
-      (article) => {
+    let key = this.route.snapshot.params['article'];
 
+    this.articlesService.getArticle(key,
+      (article) => {
         this.bgLight = article.bgColorLight;
         this.bgMed   = article.bgColorMed;
         this.bgDark  = article.bgColorDark;
         this.color   = article.color;
         B10HeaderComponent.paint(this.color);
         this.title = article.title;
+      }
+    );
 
-        firebase.storage().ref().child(article.article).getDownloadURL().then(
-          (url) => {
-            $("#content").load(url);
-          }
-        ).catch(
-          (error) => {
-            console.dir(error);
-          }
-        );
+    firebase.storage().ref().child('articles/' + key + '.html').getDownloadURL().then(
+      (url) => {
+        $("#content").load(url);
+      }
+    ).catch(
+      (error) => {
+        console.dir(error);
+      }
+    );
 
-        firebase.storage().ref().child(article.image).getDownloadURL().then(
-          (url) => {
-            this.image = url;
-          }
-        ).catch(
-          (error) => {
-            console.log(error);
-          }
-        );
-
+    firebase.storage().ref().child('images/' + key + '.png').getDownloadURL().then(
+      (url) => {
+        $("#image").attr("src", url);
+      }
+    ).catch(
+      (error) => {
+        console.dir(error);
       }
     );
   }

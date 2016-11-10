@@ -114,11 +114,17 @@ export class B10ArticleUploadComponent implements OnInit, OnDestroy {
       }
     ).key;
 
-    firebase.storage().ref().child('/articles/' + key + '.html').put(this.articles.files[0]);
+    firebase.storage().ref().child('/articles/' + key + '.html').put(this.articles.files[0]).catch(
+      (error) => {
+        console.dir(error);
+      }
+    );
     firebase.storage().ref().child('/images/'   + key + '.png' ).put(this.images.files[0]).then(
       () => {}
     ).catch(
-      () => {}
+      (error) => {
+        console.dir(error);
+      }
     );
 
   }

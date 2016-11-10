@@ -1,0 +1,12 @@
+[
+  {
+    "origin": ["http://localhost:4200"],
+    "method": ["GET"],
+    "maxAgeSeconds": 3600
+  },
+  {
+  	"origin": ["https://base10studios.com"],
+    "method": ["GET"],
+    "maxAgeSeconds": 3600
+  }
+]
