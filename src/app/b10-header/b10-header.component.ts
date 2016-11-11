@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import {AppComponent} from "../app.component";
 declare var firebase: any;
 declare var $: any;
 
@@ -7,13 +8,14 @@ declare var $: any;
   templateUrl: './b10-header.component.html',
   styleUrls: ['./b10-header.component.css']
 })
-export class B10HeaderComponent implements OnInit {
+export class B10HeaderComponent implements OnInit, OnDestroy {
 
+  interval;
   firebase: any;
 
   static paint(color){
-    $("#header-color-panel").css("background-color", color);
-    $("#header-container").css("color", color);
+    $(".paint").css("background-color", color);
+    $(".paint-text").css("color", color);
   }
 
   logout(){
@@ -27,8 +29,21 @@ export class B10HeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit(){
+
+    let createMobileSpacer = () => {
+      if(AppComponent.isMobileDevice()){
+        $('#mobile-spacer-1').css('height', $('#mobile-header').css('height'));
+        $('#mobile-spacer-2').css('height', $('#mobile-footer').css('height'));
+      }
+    };
+
+    this.interval = setInterval(createMobileSpacer, 30);
     this.firebase = firebase;
     B10HeaderComponent.paint("#555555");
+  }
+
+  ngOnDestroy(){
+    removeEventListener(this.interval);
   }
 
 }

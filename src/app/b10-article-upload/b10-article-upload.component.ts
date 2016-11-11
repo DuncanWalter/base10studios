@@ -11,9 +11,11 @@ declare var $: any;
 export class B10ArticleUploadComponent implements OnInit, OnDestroy {
 
   // used to manage the page styles
+  status;
   height;
   interval;
   hue;
+  saturation;
 
   // article data
   title;
@@ -61,13 +63,13 @@ export class B10ArticleUploadComponent implements OnInit, OnDestroy {
 
   changeHue(hue){
     this.hue = hue || this.hue;
-    let color = {h: hue, s: 10, v: 99};
+    let color = {h: hue, s: 10 * this.saturation / 100, v: 99};
     this.bgColorLight = B10ArticleUploadComponent.toRGBColor(color);
-    color.s = 25; color.v = 98;
+    color.s = 25 * this.saturation / 100; color.v = 98;
     this.bgColorMed   = B10ArticleUploadComponent.toRGBColor(color);
-    color.s = 42; color.v = 98;
+    color.s = 42 * this.saturation / 100; color.v = 98;
     this.bgColorDark  = B10ArticleUploadComponent.toRGBColor(color);
-    color.s = 92; color.v = 63;
+    color.s = 92 * this.saturation / 100; color.v = 63;
     this.color        = B10ArticleUploadComponent.toRGBColor(color);
     B10HeaderComponent.paint(this.color);
     $('.thumb').css('background-color', this.color);
@@ -91,14 +93,17 @@ export class B10ArticleUploadComponent implements OnInit, OnDestroy {
 
   uploadArticle(){
 
+    let report = (message, color) => {
+      this.status = message;
+      B10HeaderComponent.paint(color);
+    };
+
     this.articles = $('#upload-file-art')[0];
     this.images = $('#upload-file-img')[0];
 
-    console.dir(this.articles);
-
     if(this.articles.files[0] == null){console.log('no article'); return false}
     if(this.images.files[0]   == null){console.log('no image');   return false}
-    if(this.title   == null){console.log(this.title); return false}
+    if(this.title             == null){console.log('no title'); return false}
 
     let key = firebase.database().ref('articles').push(
       {
@@ -107,6 +112,7 @@ export class B10ArticleUploadComponent implements OnInit, OnDestroy {
         bgColorDark: this.bgColorDark,
         color: this.color,
         title: this.title,
+        type: 'Rambling'
       },
       () => {
         firebase.database().ref('articles/' + key + '/article').set('/articles/' + key + ".html");
@@ -116,14 +122,15 @@ export class B10ArticleUploadComponent implements OnInit, OnDestroy {
 
     firebase.storage().ref().child('/articles/' + key + '.html').put(this.articles.files[0]).catch(
       (error) => {
-        console.dir(error);
+        report(error, '#fa2435');
       }
     );
+
     firebase.storage().ref().child('/images/'   + key + '.png' ).put(this.images.files[0]).then(
       () => {}
     ).catch(
       (error) => {
-        console.dir(error);
+        report(error, '#fa2435');
       }
     );
 

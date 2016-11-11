@@ -6,7 +6,7 @@
           <li *ngFor="let article of column">
             <a routerLink="/home/articles/{{article.key}}" routerLinkActive="active">
               <div style="position:relative" class="card white hoverable">
-                <div class="card-image">
+                <div class="card-image" style="min-height:80pt">
                   <img [id]="article.key" style="object-fit:cover;max-height:80pt;">
                 </div>
                 <div class="card-content" [style.color]="article.color" [style.background-color]="article.bgColorLight">

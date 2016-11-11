@@ -24,13 +24,19 @@
       </div>
       <div class="card-content">
         <p class="range-field">
-          <input type="range" [(ngModel)]="hue" [style.color]="color" [style.background-color]="color" min="0" max="360">
+          <input type="range" class="paint" [(ngModel)]="hue" min="0" max="360">
+        </p>
+        <p class="range-field">
+          <input type="range" class="paint" [(ngModel)]="saturation" min="0" max="100">
         </p>
       </div>
       <div class="card-content">
         <button (click)="uploadArticle()" class="btn-flat white waves-effect waves-white center-align" [style.color]="color" style="width:100%">
           SUBMIT
         </button>
+      </div>
+      <div class="card-content">
+        <p class="paint-text">{{status}}</p>
       </div>
     </div>
   </div>
