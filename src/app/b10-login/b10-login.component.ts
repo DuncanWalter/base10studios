@@ -26,7 +26,6 @@ export class B10LoginComponent implements OnInit {
         this.statusColor = "#08a719";
         B10HeaderComponent.paint("#08a719");
         this.status = "Welcome back, friend";
-        firebase.User = firebase.User || "oneOneBlueHumanCreatureToken";
       },
       (error) => {
         this.statusColor = "#fa1256";

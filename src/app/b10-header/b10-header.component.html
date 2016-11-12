@@ -10,7 +10,7 @@
             <a routerLink="/home/articles" class="paint-text btn-flat white waves-effect waves-white center-align" style="width:100%"><b>ABOUT</b></a>
           </div>
           <div class="col s4">
-            <b10-search></b10-search>
+            <a routerLink="/engine" class="paint-text btn-flat white waves-effect waves-white center-align" style="width:100%"><b>ENGINE</b></a>
           </div>
           <div class="col s4">
             <a routerLink="/home/contacts" class="paint-text btn-flat white waves-effect waves-white center-align" style="width:100%"><b>TEAM</b></a>
@@ -27,15 +27,15 @@
 
 <div style="position:relative;top:-1.5rem;" class="row container center-align hide-on-small-only">
   <div class="col s12">
-    <div class="card grey darken-2">
-      <p style="margin-top:0;margin-bottom:0;" class="card-content grey-text text-darken-3">
-        <a *ngIf="firebase.User==null" class="grey-text text-darken-3" routerLink="/home/login" routerLinkActive="active">
-          LOGIN
+    <div class="card">
+      <p style="margin-top:0;margin-bottom:0;" class="card-content grey darken-2">
+        <a class="grey-text text-darken-3" routerLink="/home/login" routerLinkActive="active">
+          LOGIN   |
         </a>
-        <a *ngIf="firebase.User!=null" class="grey-text text-darken-3" routerLink="/home/articles/upload" routerLinkActive="active">
+        <a class="grey-text text-darken-3" routerLink="/home/articles/upload" routerLinkActive="active">
           UPLOAD  |
         </a>
-        <a *ngIf="firebase.User!=null" class="grey-text text-darken-3" (click)="logout()" style="cursor:pointer;">
+        <a class="grey-text text-darken-3" (click)="logout()" style="cursor:pointer;">
           LOGOUT
         </a>
       </p>
@@ -44,9 +44,6 @@
 </div>
 
 <div id="mobile-header" class="card hide-on-med-and-up" style="z-index:3;position:fixed;top:0;width:100%;margin-top:0;">
-  <div class="card-content paint" style="padding:1px">
-    <h5 class="white-text center-align">BASE [10] STUDIOS</h5>
-  </div>
   <div class="card-content white" style="padding:1px">
     <div class="row" style="padding-bottom:0;margin:0;">
       <div class="col s6">
@@ -62,13 +59,13 @@
 <div id="mobile-footer" style="z-index:3;position:fixed;bottom:0;width:100%;margin:0;" class="card center-align hide-on-med-and-up">
   <div class="card-content grey darken-2" style="padding:8px;">
     <p class="grey-text text-darken-3">
-      <a *ngIf="firebase.User==null" class="grey-text text-darken-3" routerLink="/home/login" routerLinkActive="active">
+      <a *ngIf="firebase.currentUser==null" class="grey-text text-darken-3" routerLink="/home/login" routerLinkActive="active">
         LOGIN
       </a>
-      <a *ngIf="firebase.User!=null" class="grey-text text-darken-3" routerLink="/home/articles/upload" routerLinkActive="active">
+      <a *ngIf="firebase.currentUser!=null" class="grey-text text-darken-3" routerLink="/home/articles/upload" routerLinkActive="active">
         UPLOAD  |
       </a>
-      <a *ngIf="firebase.User!=null" class="grey-text text-darken-3" (click)="logout()" style="cursor:pointer;">
+      <a *ngIf="firebase.currentUser!=null" class="grey-text text-darken-3" (click)="logout()" style="cursor:pointer;">
         LOGOUT
       </a>
     </p>

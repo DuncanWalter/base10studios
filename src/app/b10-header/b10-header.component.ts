@@ -20,9 +20,11 @@ export class B10HeaderComponent implements OnInit, OnDestroy {
 
   logout(){
     firebase.auth().signOut().then(
-      () => {
-        firebase.User = null;
-      }
+      // () => {
+      //   firebase.User = null;
+      // }
+    ).catch(
+
     )
   }
 
@@ -39,7 +41,8 @@ export class B10HeaderComponent implements OnInit, OnDestroy {
 
     this.interval = setInterval(createMobileSpacer, 30);
     this.firebase = firebase;
-    B10HeaderComponent.paint("#555555");
+    AppComponent.paint("#555555");
+    AppComponent.background('/assets/45-degree-fabric-light.png');
   }
 
   ngOnDestroy(){

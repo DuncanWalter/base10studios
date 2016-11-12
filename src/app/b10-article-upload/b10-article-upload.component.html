@@ -7,14 +7,14 @@
     </div>
   </div>
   <div class="col s8">
-    <div id="upload-panel" class="card" [style.color]="color">
+    <div id="upload-panel" class="card paint-text">
       <div class="card-content" [style.background-color]="bgColorLight">
         <input class="center-align" type="text" [(ngModel)]="title" placeholder="TITLE" style="font-size:37px">
-        <div style="position:relative;" class="btn waves-effect waves-white center-align" [style.background-color]="color">
+        <div style="position:relative;" class="btn waves-effect waves-white center-align paint">
           ARTICLE
           <input id="upload-file-art" type="file">
         </div>
-        <div style="position:relative;" class="btn waves-effect waves-white center-align" [style.background-color]="color">
+        <div style="position:relative;" class="btn waves-effect waves-white center-align paint">
           IMAGE
           <input id="upload-file-img" type="file">
         </div>
@@ -31,7 +31,7 @@
         </p>
       </div>
       <div class="card-content">
-        <button (click)="uploadArticle()" class="btn-flat white waves-effect waves-white center-align" [style.color]="color" style="width:100%">
+        <button (click)="uploadArticle()" class="btn-flat white waves-effect waves-white center-align paint-text" style="width:100%">
           SUBMIT
         </button>
       </div>

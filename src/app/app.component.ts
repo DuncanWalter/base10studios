@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+declare var $: any;
 
 @Component({
   selector: 'app-root',
@@ -15,6 +16,14 @@ export class AppComponent {
   }
   static isDesktopDevice() {
     return screen.availWidth > 992;
+  }
+
+  static paint(color){
+    $(".paint").css("background-color", color);
+    $(".paint-text").css("color", color);
+  }
+  static background(src){
+    $(".background").css("background", "#000000 url("+src+") top center");
   }
 
 }

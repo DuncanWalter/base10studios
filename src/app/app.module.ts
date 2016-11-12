@@ -14,6 +14,7 @@ import { B10ArticleComponent } from './b10-article/b10-article.component';
 import { B10ArticlePanelsComponent } from './b10-article-panels/b10-article-panels.component';
 import { B10ArticleUploadComponent } from './b10-article-upload/b10-article-upload.component';
 import { B10LoginComponent } from './b10-login/b10-login.component';
+import { B10EngineComponent } from './b10-engine/b10-engine.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { B10LoginComponent } from './b10-login/b10-login.component';
     B10ArticleComponent,
     B10ArticlePanelsComponent,
     B10ArticleUploadComponent,
-    B10LoginComponent
+    B10LoginComponent,
+    B10EngineComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +38,10 @@ import { B10LoginComponent } from './b10-login/b10-login.component';
         path: '',
         redirectTo: '/home/articles',
         pathMatch: 'full'
+      },
+      {
+        path: 'engine',
+        component: B10EngineComponent
       },
       {
         path: 'home',
