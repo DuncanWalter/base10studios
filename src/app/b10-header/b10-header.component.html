@@ -1,6 +1,6 @@
 <div id="header-container" class="row container center-align hide-on-small-only" style="padding-bottom:0;margin-top:1.5rem;">
   <div class="col s12">
-    <div class="card" style="margin: 0;">
+    <div class="card slidein" style="margin: 0;">
       <div class="paint card-content center-align white-text" style="transition: 0.2s">
         <h1>BASE [10] STUDIOS</h1>
       </div>
@@ -25,14 +25,14 @@
 <router-outlet></router-outlet>
 <div class="hide-on-med-and-up" id="mobile-spacer-2" style="margin-bottom:1.5rem"></div>
 
-<div style="position:relative;top:-1.5rem;" class="row container center-align hide-on-small-only">
+<div style="position:relative;top:-1.5rem;" class="row container center-align hide-on-small-only fadein">
   <div class="col s12">
     <div class="card">
       <p style="margin-top:0;margin-bottom:0;" class="card-content grey darken-2">
         <a class="grey-text text-darken-3" routerLink="/home/login" routerLinkActive="active">
           LOGIN   |
         </a>
-        <a class="grey-text text-darken-3" routerLink="/home/articles/upload" routerLinkActive="active">
+        <a class="grey-text text-darken-3" routerLink="/home/upload" routerLinkActive="active">
           UPLOAD  |
         </a>
         <a class="grey-text text-darken-3" (click)="logout()" style="cursor:pointer;">
@@ -43,7 +43,7 @@
   </div>
 </div>
 
-<div id="mobile-header" class="card hide-on-med-and-up" style="z-index:3;position:fixed;top:0;width:100%;margin-top:0;">
+<div id="mobile-header" class="card hide-on-med-and-up slidein" style="z-index:3;position:fixed;top:0;width:100%;margin-top:0;">
   <div class="card-content white" style="padding:1px">
     <div class="row" style="padding-bottom:0;margin:0;">
       <div class="col s6">
@@ -56,13 +56,13 @@
   </div>
 </div>
 
-<div id="mobile-footer" style="z-index:3;position:fixed;bottom:0;width:100%;margin:0;" class="card center-align hide-on-med-and-up">
+<div id="mobile-footer" style="z-index:3;position:fixed;bottom:0;width:100%;margin:0;" class="card fadein center-align hide-on-med-and-up">
   <div class="card-content grey darken-2" style="padding:8px;">
     <p class="grey-text text-darken-3">
       <a *ngIf="firebase.currentUser==null" class="grey-text text-darken-3" routerLink="/home/login" routerLinkActive="active">
         LOGIN
       </a>
-      <a *ngIf="firebase.currentUser!=null" class="grey-text text-darken-3" routerLink="/home/articles/upload" routerLinkActive="active">
+      <a *ngIf="firebase.currentUser!=null" class="grey-text text-darken-3" routerLink="/home/upload" routerLinkActive="active">
         UPLOAD  |
       </a>
       <a *ngIf="firebase.currentUser!=null" class="grey-text text-darken-3" (click)="logout()" style="cursor:pointer;">

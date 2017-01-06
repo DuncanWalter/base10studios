@@ -32,6 +32,11 @@
   margin-bottom: 1.5rem;
   margin-top: 0;
 }
+.col .fill{
+  overflow-x: hidden;
+  padding-left:0;
+  padding-right:0;
+}
 .card {
   margin-bottom: 1.5rem;
   margin-top: 0;
@@ -69,4 +74,15 @@ input[type=file]{
   bottom:0;
   opacity:0;
   -webkit-filter: alpha(opacity=0);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.16);
+}
+::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.16);
+}
+body {
+  scrollbar-face-color: rgba(0, 0, 0, 0.16);
+  scrollbar-track-color: rgba(0, 0, 0, 0.16);
 }

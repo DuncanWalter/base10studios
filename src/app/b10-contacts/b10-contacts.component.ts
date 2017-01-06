@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {B10HeaderComponent} from "../b10-header/b10-header.component";
+declare const $ : any;
 
 @Component({
   selector: 'app-b10-contacts',
@@ -13,5 +14,22 @@ export class B10ContactsComponent implements OnInit {
   ngOnInit(){
     B10HeaderComponent.paint("#555555");
   }
+
+  // focus(element){
+  //   console.dir(element);
+  //   var e = $("#eli");
+  //   var d = $("#duncan");
+  //   if(element == "duncan"){
+  //     d.css("animation", "grow 2.5s");
+  //     d.css("width", "65%");
+  //     e.css("animation", "shrink 2.5s");
+  //     e.css("width", "35%");
+  //   } else {
+  //     e.css("animation", "grow 2.5s");
+  //     e.css("width", "65%");
+  //     d.css("animation", "shrink 2.5s");
+  //     d.css("width", "35%");
+  //   }
+  // }
 
 }

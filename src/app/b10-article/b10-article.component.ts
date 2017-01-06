@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {B10ArticlesService} from "../b10-articles.service";
 import {B10HeaderComponent} from "../b10-header/b10-header.component";
+import Timer = NodeJS.Timer;
 declare var firebase: any;
 declare var $: any;
 
@@ -19,14 +20,13 @@ export class B10ArticleComponent implements OnInit {
   bgDark: string;
   color: string;
   image: string;
+  interval: Timer;
 
   constructor(private route: ActivatedRoute, private articlesService: B10ArticlesService){
 
   }
 
-  ngOnInit(){
-
-    let key = this.route.snapshot.params['article'];
+  displayArticle(key){
 
     this.articlesService.getArticle(key,
       (article) => {
@@ -58,6 +58,29 @@ export class B10ArticleComponent implements OnInit {
         console.dir(error);
       }
     );
+
+  }
+
+  ngOnInit(){
+
+    let key = this.route.snapshot.params['article'];
+
+    this.displayArticle(key);
+
+    this.interval = setInterval(()=>{
+      if(this.route.snapshot.params['article'] != key){
+        key = this.route.snapshot.params['article'];
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+        this.displayArticle(key);
+      }
+    }, 30);
+
+  }
+
+  ngOnDestroy() {
+
+    clearInterval(this.interval);
+
   }
 
 }

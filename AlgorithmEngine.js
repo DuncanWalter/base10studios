@@ -197,18 +197,18 @@ function RTSEngine(units){
 var D = angular.module('D', []);
 D.controller('C', function($scope){
     $scope.units = [
-        {NAM: "Lng", VIT: 10,  HRD: 4,  STR: 5,  AGI: 5, SKL: 5, DUR: null, DPS: null, RAT: null, TAC: null, GRP: null, SIZ: 0.7, SPD: 3.4, RNG: 0, DLY: 0.6},
-        {NAM: "Rch", VIT: 40, HRD: 13, STR: 16,  AGI: 3, SKL: 3, DUR: null, DPS: null, RAT: null, TAC: null, GRP: null, SIZ: 0.9, SPD: 2.2, RNG: 3, DLY: 1.5},
-        {NAM: "Hyd", VIT: 25, HRD: 5,  STR: 12,  AGI: 5, SKL: 6, DUR: null, DPS: null, RAT: null, TAC: null, GRP: null, SIZ: 1.1, SPD: 2.5, RNG: 6, DLY: 0.7},
-        {NAM: "Ult", VIT: 170, HRD: 15, STR: 18, AGI: 2, SKL: 2, DUR: null, DPS: null, RAT: null, TAC: null, GRP: null, SIZ: 2.1, SPD: 3.1, RNG: 1, DLY: 0.9},
-        {NAM: "Lng",  VIT: 7,  HRD: 2,  STR: 5,  AGI: 7, SKL: 5, DUR: null, DPS: null, RAT: null, TAC: null, GRP: null, SIZ: 0.7, SPD: 3.4, RNG: 0, DLY: 0.6},
-        {NAM: "Rch",  VIT: 16, HRD: 10, STR: 7,  AGI: 3, SKL: 3, DUR: null, DPS: null, RAT: null, TAC: null, GRP: null, SIZ: 0.9, SPD: 2.2, RNG: 3, DLY: 1.5},
-        {NAM: "Hyd",  VIT: 13, HRD: 3,  STR: 5,  AGI: 4, SKL: 6, DUR: null, DPS: null, RAT: null, TAC: null, GRP: null, SIZ: 1.1, SPD: 2.5, RNG: 6, DLY: 0.7},
-        {NAM: "Ult",  VIT: 45, HRD: 15, STR: 17, AGI: 2, SKL: 2, DUR: null, DPS: null, RAT: null, TAC: null, GRP: null, SIZ: 2.1, SPD: 3.1, RNG: 1, DLY: 0.9},
-        {NAM: "Lng",  VIT: 7,  HRD: 2,  STR: 5,  AGI: 7, SKL: 5, DUR: null, DPS: null, RAT: null, TAC: null, GRP: null, SIZ: 0.7, SPD: 3.4, RNG: 0, DLY: 0.6},
-        {NAM: "Rch",  VIT: 16, HRD: 10, STR: 7,  AGI: 3, SKL: 3, DUR: null, DPS: null, RAT: null, TAC: null, GRP: null, SIZ: 0.9, SPD: 2.2, RNG: 3, DLY: 1.5},
-        {NAM: "Hyd",  VIT: 13, HRD: 3,  STR: 5,  AGI: 4, SKL: 6, DUR: null, DPS: null, RAT: null, TAC: null, GRP: null, SIZ: 1.1, SPD: 2.5, RNG: 6, DLY: 0.7},
-        {NAM: "Ult",  VIT: 45, HRD: 15, STR: 17, AGI: 2, SKL: 2, DUR: null, DPS: null, RAT: null, TAC: null, GRP: null, SIZ: 2.1, SPD: 3.1, RNG: 1, DLY: 0.9}
+      {NAM: "Lng", VIT: 10,  HRD: 4,  STR: 5,  AGI: 5, SKL: 5, DUR: null, DPS: null, RAT: null, TAC: null, GRP: null, SIZ: 0.7, SPD: 3.4, RNG: 0, DLY: 0.6},
+      {NAM: "Rch", VIT: 40, HRD: 13, STR: 16,  AGI: 3, SKL: 3, DUR: null, DPS: null, RAT: null, TAC: null, GRP: null, SIZ: 0.9, SPD: 2.2, RNG: 3, DLY: 1.5},
+      {NAM: "Hyd", VIT: 25, HRD: 5,  STR: 12,  AGI: 5, SKL: 6, DUR: null, DPS: null, RAT: null, TAC: null, GRP: null, SIZ: 1.1, SPD: 2.5, RNG: 6, DLY: 0.7},
+      {NAM: "Ult", VIT: 170, HRD: 15, STR: 18, AGI: 2, SKL: 2, DUR: null, DPS: null, RAT: null, TAC: null, GRP: null, SIZ: 2.1, SPD: 3.1, RNG: 1, DLY: 0.9},
+      {NAM: "Lng",  VIT: 7,  HRD: 2,  STR: 5,  AGI: 7, SKL: 5, DUR: null, DPS: null, RAT: null, TAC: null, GRP: null, SIZ: 0.7, SPD: 3.4, RNG: 0, DLY: 0.6},
+      {NAM: "Rch",  VIT: 16, HRD: 10, STR: 7,  AGI: 3, SKL: 3, DUR: null, DPS: null, RAT: null, TAC: null, GRP: null, SIZ: 0.9, SPD: 2.2, RNG: 3, DLY: 1.5},
+      {NAM: "Hyd",  VIT: 13, HRD: 3,  STR: 5,  AGI: 4, SKL: 6, DUR: null, DPS: null, RAT: null, TAC: null, GRP: null, SIZ: 1.1, SPD: 2.5, RNG: 6, DLY: 0.7},
+      {NAM: "Ult",  VIT: 45, HRD: 15, STR: 17, AGI: 2, SKL: 2, DUR: null, DPS: null, RAT: null, TAC: null, GRP: null, SIZ: 2.1, SPD: 3.1, RNG: 1, DLY: 0.9},
+      {NAM: "Lng",  VIT: 7,  HRD: 2,  STR: 5,  AGI: 7, SKL: 5, DUR: null, DPS: null, RAT: null, TAC: null, GRP: null, SIZ: 0.7, SPD: 3.4, RNG: 0, DLY: 0.6},
+      {NAM: "Rch",  VIT: 16, HRD: 10, STR: 7,  AGI: 3, SKL: 3, DUR: null, DPS: null, RAT: null, TAC: null, GRP: null, SIZ: 0.9, SPD: 2.2, RNG: 3, DLY: 1.5},
+      {NAM: "Hyd",  VIT: 13, HRD: 3,  STR: 5,  AGI: 4, SKL: 6, DUR: null, DPS: null, RAT: null, TAC: null, GRP: null, SIZ: 1.1, SPD: 2.5, RNG: 6, DLY: 0.7},
+      {NAM: "Ult",  VIT: 45, HRD: 15, STR: 17, AGI: 2, SKL: 2, DUR: null, DPS: null, RAT: null, TAC: null, GRP: null, SIZ: 2.1, SPD: 3.1, RNG: 1, DLY: 0.9}
     ];
     $scope.traits = [
         "NAM",

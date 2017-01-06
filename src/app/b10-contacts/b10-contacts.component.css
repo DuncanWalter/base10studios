@@ -1,0 +1,92 @@
+
+@keyframes slideinl {
+  0%   {opacity:0;position:relative;left:100%}
+  100% {opacity:1;position:relative;left:0}
+}
+@keyframes slideinr {
+  0%   {opacity:0;position:relative;right:100%}
+  100% {opacity:1;position:relative;right:0}
+}
+
+.slidel {
+  animation-name: slideinl;
+  animation-duration: 1.2s;
+  animation-timing-function: ease;
+  position: static;
+  height:100%;
+  overflow-x: hidden;
+}
+.slider {
+  animation-name: slideinr;
+  animation-duration: 1.2s;
+  animation-timing-function: ease;
+  position: static;
+  height:100%;
+  overflow-x: hidden;
+}
+
+div{
+  transition: width 1s;
+}
+.container:hover .col:hover {
+  width: 65%;
+}
+.container:hover .col {
+  width: 35%;
+}
+.card-content {
+  white-space: nowrap;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes fade1 {
+  0%   {opacity:1.00;}
+  100% {opacity:0.00;}
+}
+@keyframes grow {
+  0%   {width:50%}
+  100%  {width:65%}
+}
+@keyframes shrink {
+  0%   {width:50%}
+  100%  {width:35%}
+}
+@keyframes hover {
+  0%   {background-color:black;}
+  50%  {background-color:white;}
+  100% {background-color:black;}
+}
+
+/*.profile .card:hover .card-content:hover {*/
+  /*animation-name: fade2;*/
+  /*animation-duration: 2s;*/
+  /*animation-iteration-count: infinite;*/
+/*}*/
+.profile .card:hover .card-content {
+  animation-name: fade1;
+  animation-duration: 3s;
+  animation-timing-function: ease-in;
+  opacity:0.00;
+}
+.profile .card:hover .card-image {
+  animation-name: fade1;
+  animation-duration: 3s;
+  animation-timing-function: ease-in;
+  opacity:0.00;
+  /*animation-iteration-count: 1;*/
+}
+.profile .card {
+  /*animation-name: hover;*/
+  /*animation-duration: 3s;*/
+  /*animation-iteration-count: infinite;*/
+}

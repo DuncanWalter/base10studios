@@ -36,14 +36,5 @@ export class B10ArticlesService {
       }
     );
   }
-  // /*appends an article with all its text content*/
-  // fillArticle(article, callback){
-  //   firebase.database().ref('/articleContents/' + article.key).once('value',
-  //     (snapshot) => {
-  //       article.content = snapshot.val().content;
-  //       callback(article);
-  //     }
-  //   )
-  // }
 
 }

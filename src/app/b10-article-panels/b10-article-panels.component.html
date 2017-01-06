@@ -1,3 +1,4 @@
+<router-outlet></router-outlet>
 <div class="row container">
   <ul style="margin:0;padding:0;">
     <li *ngFor="let column of layout">
@@ -5,7 +6,7 @@
         <ul>
           <li *ngFor="let article of column">
             <a routerLink="/home/articles/{{article.key}}" routerLinkActive="active">
-              <div style="position:relative" class="card white hoverable">
+              <div style="position:relative" class="card white hoverable slidein">
                 <div class="card-image" style="min-height:80pt">
                   <img [id]="article.key" style="object-fit:cover;max-height:80pt;">
                 </div>

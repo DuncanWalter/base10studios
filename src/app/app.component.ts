@@ -23,7 +23,7 @@ export class AppComponent {
     $(".paint-text").css("color", color);
   }
   static background(src){
-    $(".background").css("background", "#000000 url("+src+") top center");
+    $(".background").css("background", "#000000 url("+src+") fixed top center");
   }
 
 }

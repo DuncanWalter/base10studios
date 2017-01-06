@@ -1,0 +1,90 @@
+td, th {
+  border-radius: 0;
+  text-align: left;
+  height: 1.7rem;
+  vertical-align: middle;
+  padding: 0.35rem 1.2rem;
+}
+thead {
+  border:none;
+}
+thead td {
+  border:none;
+  height: 1.7rem;
+}
+tbody tr:nth-child(2n-1){
+  background-color: rgba(0, 0, 0, 0.05);
+}
+tbody tr:hover{
+  background-color: rgba(0, 0, 0, 0.16);
+}
+tbody tr td:hover{
+  background-color: rgba(0, 0, 0, 0.08);
+}
+th {
+  height: 0;
+  line-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  color: transparent;
+  border: none;
+  white-space: nowrap;
+}
+th div {
+  color: rgb(0, 0, 0);
+  z-index:7;
+  position: absolute;
+  background: transparent;
+  width:100%;
+  top: 0;
+  padding-top:0.6rem;
+  padding-bottom: 0.6rem;
+  line-height: normal;
+  height: 2.2rem;
+}
+td input {
+  background-color: rgba(0, 0, 0, 0.08);
+  margin: 0;
+  width: calc(100% - 2.4rem);
+  height: 100%;
+}
+input {
+  width: calc(100% - 1.5rem);
+  background-color: rgba(0, 0, 0, 0.16);
+  border: none !important;
+  color: #dad6a9;
+  padding: 0.35rem 1.2rem;
+  height: 1.7rem;
+}
+td input:hover {
+  background-color: transparent;
+}
+input:active {
+  border: none !important;
+  box-shadow: none !important;
+}
+input:focus {
+  border: none !important;
+  box-shadow: none !important;
+}
+input:enabled {
+  border: none !important;
+  box-shadow: none !important;
+}
+input:disabled {
+  border: none !important;
+  box-shadow: none !important;
+}
+input:valid {
+  border: none !important;
+  box-shadow: none !important;
+}
+input:invalid {
+  border: none !important;
+  box-shadow: none !important;
+  background-color: rgba(255, 15, 72, 0.16);
+}
+.input {
+  padding: 0;
+}
+

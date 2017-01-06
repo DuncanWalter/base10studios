@@ -49,15 +49,21 @@ import { B10EngineComponent } from './b10-engine/b10-engine.component';
         children: [
           {
             path: 'articles',
-            component: B10ArticlePanelsComponent
+            component: B10ArticlePanelsComponent,
+            children: [
+              {
+                path: ':article',
+                component: B10ArticleComponent
+              },
+              {
+                path: '',
+                component: null
+              }
+            ]
           },
           {
-            path:'articles/upload',
+            path:'upload',
             component: B10ArticleUploadComponent
-          },
-          {
-            path: 'articles/:article',
-            component: B10ArticleComponent
           },
           {
             path: 'contacts',

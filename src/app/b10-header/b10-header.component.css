@@ -1,0 +1,21 @@
+@keyframes slideind {
+  0%   {opacity:0;position:relative;bottom:13rem}
+  100% {opacity:1;position:relative;bottom:0}
+}
+
+.slidein {
+  animation-name: slideind;
+  animation-duration: 1.7s;
+  animation-timing-function: ease;
+}
+
+@keyframes fadein {
+  0%   {opacity:0;}
+  100% {opacity:1;}
+}
+
+.fadein {
+  animation-name: fadein;
+  animation-duration: 2.7s;
+  animation-timing-function: ease-in;
+}
