@@ -9,7 +9,7 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body class="background" style="background: #000000 url(assets/45-degree-fabric-light.png) fixed top center;">
+<body >
   <script src="https://www.gstatic.com/firebasejs/3.5.3/firebase.js"></script>
   <script>
     // Initialize Firebase
@@ -23,7 +23,13 @@
     firebase.initializeApp(config);
   </script>
 
+  <div style="position:fixed;left:0;right:0;top:0;bottom:0;">
+    <div class="background" style="background: #000000 url(assets/shattered-dark.png);height:150%;width:150%;"></div>
+  </div>
+
   <app-root>Loading...</app-root>
+
+
 
 </body>
 </html>

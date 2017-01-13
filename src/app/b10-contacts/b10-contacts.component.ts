@@ -12,13 +12,18 @@ export class B10ContactsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(){
-    B10HeaderComponent.paint("#555555");
+    B10HeaderComponent.paint("#4e4e4e");
+
+    let e = $("#eli");
+    let d = $("#duncan");
+
+    // e.css("height", d.css("height"));
+
   }
 
   // focus(element){
   //   console.dir(element);
-  //   var e = $("#eli");
-  //   var d = $("#duncan");
+
   //   if(element == "duncan"){
   //     d.css("animation", "grow 2.5s");
   //     d.css("width", "65%");

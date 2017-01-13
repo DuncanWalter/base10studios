@@ -56,7 +56,7 @@ export class B10LoginComponent implements OnInit {
     this.email = "";
     this.password = "";
 
-    B10HeaderComponent.paint("#555555");
+    B10HeaderComponent.paint("#4e4e4e");
 
     this.status = "We send no emails; Rest easy";
     this.statusColor = "#a9a9a9";

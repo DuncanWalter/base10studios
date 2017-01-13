@@ -6,7 +6,7 @@
   transition: background-color 0.3s;
 }
 .card {
-  transition: height 0.7s;
+  transition: all 0.7s;
 }
 .fadein {
   animation-name: fadein;
@@ -16,3 +16,4 @@
 img {
   transition: 0.5s
 }
+

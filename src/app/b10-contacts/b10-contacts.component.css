@@ -26,27 +26,21 @@
 }
 
 div{
-  transition: width 1s;
+  transition: all 0.7s;
+  transition-timing-function: ease;
+}
+.container .col {
+  height: 100%;
 }
 .container:hover .col:hover {
-  width: 65%;
+  flex: 2;
 }
-.container:hover .col {
-  width: 35%;
+.container .col {
+  flex: 1;
 }
 .card-content {
   white-space: nowrap;
 }
-
-
-
-
-
-
-
-
-
-
 
 
 @keyframes fade1 {

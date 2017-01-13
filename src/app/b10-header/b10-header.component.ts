@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import {AppComponent} from "../app.component";
-declare var firebase: any;
-declare var $: any;
+declare const firebase: any;
+declare const $: any;
 
 @Component({
   selector: 'b10-header',
@@ -20,9 +20,7 @@ export class B10HeaderComponent implements OnInit, OnDestroy {
 
   logout(){
     firebase.auth().signOut().then(
-      // () => {
-      //   firebase.User = null;
-      // }
+
     ).catch(
 
     )
@@ -41,8 +39,11 @@ export class B10HeaderComponent implements OnInit, OnDestroy {
 
     this.interval = setInterval(createMobileSpacer, 30);
     this.firebase = firebase;
-    AppComponent.paint("#555555");
-    AppComponent.background('/assets/45-degree-fabric-light.png');
+    AppComponent.paint("#4e4e4e");
+
+    let bgs = ['bright-squares', 'shattered-dark', '45-degree-fabric-light'];
+
+    AppComponent.background('/assets/'+bgs[Math.floor(Math.random()*bgs.length)]+'.png');
   }
 
   ngOnDestroy(){

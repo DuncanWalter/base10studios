@@ -56,7 +56,7 @@ export class B10ArticlePanelsComponent implements OnInit, OnDestroy {
 
   ngOnInit(){
 
-    B10HeaderComponent.paint("#555555");
+    B10HeaderComponent.paint("#4e4e4e");
 
     this.interval = setInterval(this.packArticles, 30);
 
