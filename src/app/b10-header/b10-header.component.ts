@@ -41,7 +41,7 @@ export class B10HeaderComponent implements OnInit, OnDestroy {
     this.firebase = firebase;
     AppComponent.paint("#4e4e4e");
 
-    let bgs = ['bright-squares', 'shattered-dark', '45-degree-fabric-light'];
+    let bgs = ['shattered-dark'];
 
     AppComponent.background('/assets/'+bgs[Math.floor(Math.random()*bgs.length)]+'.png');
   }

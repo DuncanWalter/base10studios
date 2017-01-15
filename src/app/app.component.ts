@@ -46,10 +46,10 @@ export class AppComponent {
 
     setInterval(()=>{
       let background = $(".background");
-      background.css("left",   (-this.cursor.x / screen.availWidth  - 0.5) * 1.6 + "rem");
-      background.css("right",  (+this.cursor.x / screen.availWidth  - 0.5) * 1.6 + "rem");
-      background.css("top",    (-this.cursor.y / screen.availHeight - 0.5) * 1.6 + "rem");
-      background.css("bottom", (+this.cursor.y / screen.availHeight - 0.5) * 1.6 + "rem");
+      background.css("left",   (-this.cursor.x / screen.availWidth  - 0.5) * 1.3 + "rem");
+      background.css("right",  (+this.cursor.x / screen.availWidth  - 0.5) * 1.3 + "rem");
+      background.css("top",    (-this.cursor.y / screen.availHeight - 0.5) * 1.5 + "rem");
+      background.css("bottom", (+this.cursor.y / screen.availHeight - 0.5) * 1.5 + "rem");
     },30);
 
   }

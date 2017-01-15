@@ -15,6 +15,7 @@ import { B10ArticlePanelsComponent } from './b10-article-panels/b10-article-pane
 import { B10ArticleUploadComponent } from './b10-article-upload/b10-article-upload.component';
 import { B10LoginComponent } from './b10-login/b10-login.component';
 import { B10EngineComponent } from './b10-engine/b10-engine.component';
+import {Base10StudiosRoutingModule} from "./app-routing.module";
 
 @NgModule({
   declarations: [
@@ -33,49 +34,7 @@ import { B10EngineComponent } from './b10-engine/b10-engine.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot([
-      {
-        path: '',
-        redirectTo: '/home/articles',
-        pathMatch: 'full'
-      },
-      {
-        path: 'engine',
-        component: B10EngineComponent
-      },
-      {
-        path: 'home',
-        component: B10HeaderComponent,
-        children: [
-          {
-            path: 'articles',
-            component: B10ArticlePanelsComponent,
-            children: [
-              {
-                path: ':article',
-                component: B10ArticleComponent
-              },
-              {
-                path: '',
-                component: null
-              }
-            ]
-          },
-          {
-            path:'upload',
-            component: B10ArticleUploadComponent
-          },
-          {
-            path: 'contacts',
-            component: B10ContactsComponent
-          },
-          {
-            path:'login',
-            component: B10LoginComponent
-          }
-        ]
-      }
-    ])
+    Base10StudiosRoutingModule
   ],
   providers: [
     B10ArticlesService

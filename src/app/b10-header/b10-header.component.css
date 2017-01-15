@@ -21,7 +21,7 @@
 }
 
 .row .flex {
-  flex: 3;
+  flex: 4;
   transition: all 0.7s;
   transition-timing-function: ease;
   padding: 0.17rem;

@@ -1,10 +1,10 @@
-import { AlgorithmEnginePage } from './app.po';
+import { Base10StudiosPage } from './app.po';
 
-describe('algorithm-engine App', function() {
-  let page: AlgorithmEnginePage;
+describe('base-10-studios App', function() {
+  let page: Base10StudiosPage;
 
   beforeEach(() => {
-    page = new AlgorithmEnginePage();
+    page = new Base10StudiosPage();
   });
 
   it('should display message saying app works', () => {

@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-export class AlgorithmEnginePage {
+export class Base10StudiosPage {
   navigateTo() {
     return browser.get('/');
   }

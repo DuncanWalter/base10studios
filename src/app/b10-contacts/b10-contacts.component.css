@@ -33,10 +33,10 @@ div{
   height: 100%;
 }
 .container:hover .col:hover {
-  flex: 2;
+  flex: 5;
 }
 .container .col {
-  flex: 1;
+  flex: 3;
 }
 .card-content {
   white-space: nowrap;
