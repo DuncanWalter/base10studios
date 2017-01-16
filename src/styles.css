@@ -1,6 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
 .square {
-  position: relative;
+  /*position: relative;*/
 }
 
 .square:after {
@@ -14,7 +13,7 @@
 }
 
 .input:hover { border: none; }
-.input:active { border: none; }
+.input:active{ border: none; }
 .input:valid { border: none; }
 .input:focus { border: none; }
 
@@ -50,9 +49,6 @@
   transition: 0.12s;
 }
 
-/*input[type=range] + .thumb .value {*/
-  /*background-color: inherit;*/
-/*}*/
 input[type=range] + .thumb {
   background-color: inherit;
 }
