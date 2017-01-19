@@ -29,7 +29,7 @@ export class AppComponent {
     background.css("background", "#000000 url("+src+")");
     background.css("position", "relative");
     background.css("transition", "0.2s");
-    background.css("transition-timing-device", "ease");
+    background.css("transition-timing-device", "linear");
   }
 
   ngOnInit(){
@@ -38,18 +38,21 @@ export class AppComponent {
 
     let c = this.cursor;
 
-    $(document).mousemove(function (e) {
+    $(document).mousemove((e)=>{
       c.x = e.pageX;
       c.y = e.pageY;
-      console.dir(e);
+    });
+    $(document).bind('mousewheel', (e)=>{
+      c.x = e.pageX;
+      c.y = e.pageY;
     });
 
     setInterval(()=>{
       let background = $(".background");
       background.css("left",   (-this.cursor.x / screen.availWidth  - 0.5) * 1.45 + "rem");
       background.css("right",  (+this.cursor.x / screen.availWidth  - 0.5) * 1.45 + "rem");
-      background.css("top",    (-this.cursor.y / screen.availHeight - 0.5) * 1.71 + "rem");
-      background.css("bottom", (+this.cursor.y / screen.availHeight - 0.5) * 1.71 + "rem");
+      background.css("top",    (-this.cursor.y / screen.availHeight - 0.5) * 1.81 + "rem");
+      background.css("bottom", (+this.cursor.y / screen.availHeight - 0.5) * 1.81 + "rem");
     },30);
 
   }

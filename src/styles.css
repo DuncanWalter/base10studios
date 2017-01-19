@@ -1,11 +1,14 @@
-.square {
-  /*position: relative;*/
+hr {
+  height: 2px;
+  border: none;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
-.square:after {
-  content: "";
-  display: block;
-  padding-bottom: 100%;
+a {
+  color: inherit;
 }
 
 .input {
