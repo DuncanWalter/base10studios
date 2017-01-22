@@ -6,9 +6,11 @@ hr {
   margin-top: 0.5rem;
   margin-bottom: 0.75rem;
 }
-
 a {
   color: inherit;
+}
+div, a, .card, .card-content .card-image{
+  border-radius: 0 !important;
 }
 
 .input {
