@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import {AppComponent} from "../app.component";
+import {Router} from "@angular/router";
 declare const firebase: any;
 declare const $: any;
 
@@ -12,6 +13,8 @@ export class B10HeaderComponent implements OnInit, OnDestroy {
 
   interval;
   firebase: any;
+
+  navigate = AppComponent.navigate;
 
   static paint(color){
     $(".paint").css("background-color", color);
@@ -26,7 +29,7 @@ export class B10HeaderComponent implements OnInit, OnDestroy {
     )
   }
 
-  constructor() { }
+  constructor(public router: Router) { }
 
   ngOnInit(){
 

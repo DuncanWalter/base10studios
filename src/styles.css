@@ -1,3 +1,21 @@
+@keyframes exit {
+  0%   {opacity: 1; position:relative; top: 0;}
+  10%  {opacity: 0; position:relative; top: 22vh;}
+  100% {opacity: 0;}
+}
+.exit{
+  animation: exit 7s linear;
+}
+
+button, button:hover {
+  background-color: transparent;
+  border: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
 hr {
   height: 2px;
   border: none;
@@ -6,40 +24,24 @@ hr {
   margin-top: 0.5rem;
   margin-bottom: 0.75rem;
 }
-a {
+a, a p, a b p, a b{
   color: inherit;
+  cursor: hand !important;
 }
-div, a, .card, .card-content .card-image{
+div, a, .card, .card.card-content, .card.card-image, img {
   border-radius: 0 !important;
 }
 
-.input {
-  border: none;
-}
-
-.input:hover { border: none; }
-.input:active{ border: none; }
-.input:valid { border: none; }
-.input:focus { border: none; }
-
-.card .card-content .content p {
+.card-content .content p {
   margin-bottom: 1rem;
 }
-.card .card-content .content h6 {
+.card-content .content h6 {
   margin-bottom: 0.75rem;
   margin-top: 2.25rem;
-}
-.btn-flat {
-  color:inherit;
 }
 .row {
   margin-bottom: 1.5rem;
   margin-top: 0;
-}
-.col .fill{
-  overflow-x: hidden;
-  padding-left:0;
-  padding-right:0;
 }
 .card {
   margin-bottom: 1.5rem;
@@ -47,43 +49,11 @@ div, a, .card, .card-content .card-image{
 }
 
 .paint {
-  transition: 0.12s;
+  transition: 0.7s;
 }
 
 .paint-text {
-  transition: 0.12s;
+  transition: 0.7s;
 }
 
-input[type=range] + .thumb {
-  background-color: inherit;
-}
-input[type=range]::-webkit-slider-thumb{
-  background-color: inherit;
-}
-input[type=range]::-moz-range-thumb{
-  background-color: inherit;
-}
-input[type=range]::-ms-thumb{
-  background-color: inherit;
-}
 
-input[type=file]{
-  position:absolute;
-  left:0;
-  right:0;
-  top:0;
-  bottom:0;
-  opacity:0;
-  -webkit-filter: alpha(opacity=0);
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.16);
-}
-::-webkit-scrollbar-track {
-  background-color: rgba(0, 0, 0, 0.16);
-}
-body {
-  scrollbar-face-color: rgba(0, 0, 0, 0.16);
-  scrollbar-track-color: rgba(0, 0, 0, 0.16);
-}

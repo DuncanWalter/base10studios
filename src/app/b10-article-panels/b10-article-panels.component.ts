@@ -1,9 +1,65 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import {B10ArticlesService} from "../b10-articles.service";
 import {B10HeaderComponent} from "../b10-header/b10-header.component";
 import {AppComponent} from "../app.component";
 declare const firebase: any;
 declare const $: any;
+
+let computerScience : any = {}; //'ComSci';
+computerScience.title = 'Computer Science';
+computerScience.path = 'ComSci';
+computerScience.type = 'Rambling';
+computerScience.color = "rgba(44,36,143,1)";
+computerScience.bgColorLight = "rgba(222,220,240,1)";
+computerScience.bgColorDark = "rgba(154,149,226,1)";
+computerScience.bgColorMed = "rgba(189,186,234,1)";
+
+let glooKit : any = {}; //'GlooKit';
+glooKit.title = 'Gloo Kit';
+glooKit.path = 'GlooKit';
+glooKit.type = 'Project';
+glooKit.color = "rgba(148,76,31,1)";
+glooKit.bgColorLight = "rgba(244,231,223,1)";
+glooKit.bgColorDark = "rgba(232,180,148,1)";
+glooKit.bgColorMed = "rgba(238,206,187,1)";
+
+let javaScript : any = {}; //'JavaScript';
+javaScript.title = 'In Praise of JavaScript';
+javaScript.path = 'JavaScript';
+javaScript.type = 'Rambling';
+javaScript.color = "rgba(13,87,161,1)";
+javaScript.bgColorLight = "rgba(226,239,252,1)";
+javaScript.bgColorDark = "rgba(145,198,250,1)";
+javaScript.bgColorMed = "rgba(187,219,250,1)";
+
+let base10 : any = {}; //'Base10';
+base10.title = 'Base 10 Studios';
+base10.path = 'Base10';
+base10.type = 'About';
+base10.color = "rgba(13,87,161,1)";
+base10.bgColorLight = "rgba(226,239,252,1)";
+base10.bgColorDark = "rgba(145,198,250,1)";
+base10.bgColorMed = "rgba(187,219,250,1)";
+
+let calculus : any = {}; //'Calculus';
+calculus.title = 'In Fear of Calculus';
+calculus.path = 'Calculus';
+calculus.type = 'Rambling';
+calculus.color = "rgba(83,83,83,1)";
+calculus.bgColorLight = "rgba(239,239,239,1)";
+calculus.bgColorDark = "rgba(196,196,196,1)";
+calculus.bgColorMed = "rgba(215,215,215,1)";
+
+export let articleTree = (()=>{
+  if(AppComponent.isDesktopDevice()){
+    return [[glooKit, base10],[computerScience,calculus, javaScript]];
+  }
+  if(AppComponent.isTabletDevice()){
+    return [[glooKit, base10],[computerScience],[calculus, javaScript]];
+  }
+  if(AppComponent.isMobileDevice()){
+    return [[glooKit],[ base10],[computerScience],[calculus], [javaScript]];
+  }
+})();
 
 @Component({
   selector: 'app-b10-article-panels',
@@ -12,37 +68,25 @@ declare const $: any;
 })
 export class B10ArticlePanelsComponent implements OnInit {
 
-  articleTree;
+
   articles;
 
   ngOnInit(){
 
     B10HeaderComponent.paint("#4e4e4e");
-    this.articles = [];
+    this.articles = articleTree;
 
-    this.articleTree = (()=>{
-      if(AppComponent.isDesktopDevice()){
-        return [['gloo','base10'],['computer-science','calculus','javascript']];
-      }
-      if(AppComponent.isTabletDevice()){
-        return [['gloo','base10'],['computer-science'],['calculus','javascript']];
-      }
-      if(AppComponent.isMobileDevice()){
-        return [['gloo'],['base10'],['computer-science'],['calculus'],['javascript']];
-      }
-    })();
-
-    let index = 0;
-    this.articleTree.forEach((row)=>{
-      let delay = index * 160;
-      this.articles.push([]);
-      row.forEach((article)=>{
-        let d = (()=>{return index})();
-        setTimeout(()=>{this.articles[d].push(article)},delay);
-        delay += 160;
-      });
-      index++;
-    });
+    // let index = 0;
+    // articleTree.forEach((row)=>{
+    //   let delay = index * 160;
+    //   this.articles.push([]);
+    //   row.forEach((article)=>{
+    //     let d = (()=>{return index})();
+    //     setTimeout(()=>{this.articles[d].push(article)},delay);
+    //     delay += 160;
+    //   });
+    //   index++;
+    // });
 
   }
 

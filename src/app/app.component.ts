@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-declare var $: any;
+import {Router} from "@angular/router";
+declare const $: any;
 
 @Component({
   selector: 'app-root',
@@ -30,6 +31,17 @@ export class AppComponent {
     background.css("position", "relative");
     background.css("transition", "0.2s");
     background.css("transition-timing-device", "linear");
+  }
+  static navigate(router: Router, path: string, scrollToTop?: boolean){
+    $('.exitable').addClass('exit');
+    if(scrollToTop != false){
+      $("html, body").animate({ scrollTop: 0 }, "slow");
+    }
+    setTimeout(()=>{
+      router.navigateByUrl(path).then(()=>{
+        $('.exitable.exit').removeClass('exit');
+      });
+    }, 700);
   }
 
   ngOnInit(){

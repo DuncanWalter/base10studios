@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {B10ArticlesService} from "../b10-articles.service";
 import {B10HeaderComponent} from "../b10-header/b10-header.component";
 import Timer = NodeJS.Timer;
+import {articleTree} from "../b10-article-panels/b10-article-panels.component";
+import {AppComponent} from "../app.component";
 declare var firebase: any;
 declare var $: any;
 
@@ -14,50 +16,27 @@ declare var $: any;
 })
 export class B10ArticleComponent implements OnInit {
 
-  title: string;
-  bgLight: string;
-  bgMed: string;
-  bgDark: string;
-  color: string;
+  article: any;
   image: string;
   interval: Timer;
 
-  constructor(private route: ActivatedRoute, private articlesService: B10ArticlesService){
+  navigate = AppComponent.navigate;
 
-  }
+  constructor(private route: ActivatedRoute, private router: Router){}
 
   displayArticle(key){
 
-    this.articlesService.getArticle(key,
-      (article) => {
-        this.bgLight = article.bgColorLight;
-        this.bgMed   = article.bgColorMed;
-        this.bgDark  = article.bgColorDark;
-        this.color   = article.color;
-        B10HeaderComponent.paint(this.color);
-        this.title = article.title;
-      }
-    );
+    this.article = articleTree.filter((row)=>{
+      return row.filter((article)=>{
+        return article.path == key;
+      }).length > 0;
+    })[0].filter((article)=>{
+      return article.path == key;
+    })[0];
 
-    firebase.storage().ref().child('articles/' + key + '.html').getDownloadURL().then(
-      (url) => {
-        $("#content").load(url);
-      }
-    ).catch(
-      (error) => {
-        console.dir(error);
-      }
-    );
+    B10HeaderComponent.paint(this.article.color);
 
-    firebase.storage().ref().child('images/' + key + '.png').getDownloadURL().then(
-      (url) => {
-        $("#image").attr("src", url);
-      }
-    ).catch(
-      (error) => {
-        console.dir(error);
-      }
-    );
+    $("#content").load('../../assets/articles/' + this.article.path + '/article.txt');
 
   }
 

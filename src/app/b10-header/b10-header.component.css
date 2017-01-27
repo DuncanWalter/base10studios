@@ -1,5 +1,5 @@
 @keyframes slideind {
-  0%   {opacity:0;position:relative;bottom:13rem}
+  0%   {opacity:0;position:relative;bottom:15vh}
   100% {opacity:1;position:relative;bottom:0}
 }
 

@@ -1,0 +1,9 @@
+<p></p>
+
+<p>The Gloo Kit, or Gloo, is our medley of libraries for native Java application developement. It has two main components, which may be used independently or in conjunction. The first is a flexible OpenGL rendering engine built around parrallel processing, and the second is an input and markup library for rapid app developement. We are still in the pre-alpha stage of developement, and our current feature set is improving rapidly.</p>
+
+<p>The OpenGL rendering portion of Gloo favors code over configuration in order to provide easy-to-learn access to all of the tricks of OpenGL. Gloo takes the most vexing parts of working with OpenGL--text, textures, and concurency--and wraps them in a friendly, high-level API. This includes font loading, texture atlasing, and much more. Using Gloo, classic and intricate OpenGL rendering techniques can be chained together to run in sequences of any complexity. Gloo also comes equipped with lightning fast tools for multithreading those sequences for bulk rendering and heavy lifting. Supporting Windows, Linux, and Mac computers, Gloo also runs on most platforms.</p>
+
+<p>The input and markup component of Gloo is designed to unify the utility of SPA applications with the flexibility of OpenGL rendering. The component-based markup seen in web developement frameworks is natural to Java, as are the computations typically handled by Javascript in the browser. So, we brought them under the same umbrella and incorperated an event based input handler. The resulting mashup is both flexible and powerful, though we are still working to hammer out our favorite conventions for it. Complete with tools for managing windows and their settings, Gloo allows for fast app developement that doesn't compromise on flexibility.</p>
+
+<p>We have several other features we would like to add to Gloo, including networking and audio APIs.</p>

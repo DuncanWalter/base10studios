@@ -1,21 +1,21 @@
 <div id="header-container" class="row container center-align hide-on-small-only" style="padding-bottom:0;margin-top:1.5rem;">
   <div class="col s12">
     <div class="card slidein" style="margin: 0;">
-      <div class="paint card-content center-align white-text" style="transition: 0.2s">
+      <div class="paint card-content center-align white-text">
         <h1>BASE [10] STUDIOS</h1>
       </div>
       <div class="card-content white">
         <div class="row" style="margin:0;display:flex;">
-          <a routerLink="/home/articles" class="col flex">
-            <p  class="paint-text center-align" style="width:100%;font-size:1.2rem;"><b>ABOUT</b></p>
+          <a (click)="navigate(router, '/home/articles')" class="col flex">
+            <p  class="paint-text center-align" style="width:100%;font-size:1.2rem;"><b>ARTICLES</b></p>
           </a>
-          <a routerLink="/engine" class="col flex">
-            <p  class="paint-text center-align" style="width:100%;font-size:1.2rem;"><b>STUFF</b></p>
+          <a href="../../assets/javadocs/javadocs" target="_blank" class="col flex">
+            <p  class="paint-text center-align" style="width:100%;font-size:1.2rem;"><b>GLOO DOCS</b></p>
           </a>
-          <a routerLink="/engine" class="col flex">
-            <p  class="paint-text center-align" style="width:100%;font-size:1.2rem;"><b>ENGINE</b></p>
+          <a href="https://github.com/DuncanWalter/gloo-kit" target="_blank" class="col flex">
+            <p  class="paint-text center-align" style="width:100%;font-size:1.2rem;"><b>GLOO GIT</b></p>
           </a>
-          <a routerLink="/home/contacts" class="col flex">
+          <a (click)="navigate(router, '/home/contacts')" class="col flex">
             <p  class="paint-text center-align" style="width:100%;font-size:1.2rem;"><b>TEAM</b></p>
           </a>
         </div>
@@ -26,25 +26,25 @@
 
 <div class="hide-on-med-and-up" id="mobile-spacer-1" style="margin-bottom:1.5rem"></div>
 <router-outlet></router-outlet>
-<div class="hide-on-med-and-up" id="mobile-spacer-2" style="margin-bottom:1.5rem"></div>
+<!--<div class="hide-on-med-and-up" id="mobile-spacer-2" style="margin-bottom:1.5rem"></div>-->
 
-<div style="position:relative;top:-1.5rem;" class="row container center-align hide-on-small-only fadein">
-  <div class="col s12">
-    <div class="card">
-      <p style="margin-top:0;margin-bottom:0;" class="card-content grey darken-2">
-        <a class="grey-text text-darken-3" routerLink="/home/login" routerLinkActive="active">
-          LOGIN   |
-        </a>
-        <a class="grey-text text-darken-3" routerLink="/home/upload" routerLinkActive="active">
-          UPLOAD  |
-        </a>
-        <a class="grey-text text-darken-3" (click)="logout()" style="cursor:pointer;">
-          LOGOUT
-        </a>
-      </p>
-    </div>
-  </div>
-</div>
+<!--<div style="position:relative;top:-1.5rem;" class="row container center-align hide-on-small-only fadein">-->
+  <!--<div class="col s12">-->
+    <!--<div class="card">-->
+      <!--<p style="margin-top:0;margin-bottom:0;" class="card-content grey darken-2">-->
+        <!--<a class="grey-text text-darken-3" routerLink="/home/login" routerLinkActive="active">-->
+          <!--LOGIN   |-->
+        <!--</a>-->
+        <!--<a class="grey-text text-darken-3" routerLink="/home/upload" routerLinkActive="active">-->
+          <!--UPLOAD  |-->
+        <!--</a>-->
+        <!--<a class="grey-text text-darken-3" (click)="logout()" style="cursor:pointer;">-->
+          <!--LOGOUT-->
+        <!--</a>-->
+      <!--</p>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
 
 <div id="mobile-header" class="card hide-on-med-and-up slidein" style="z-index:3;position:fixed;top:0;width:100%;margin-top:0;">
   <div class="card-content white" style="padding:1px">
@@ -59,20 +59,20 @@
   </div>
 </div>
 
-<div id="mobile-footer" style="z-index:3;position:fixed;bottom:0;width:100%;margin:0;" class="card fadein center-align hide-on-med-and-up">
-  <div class="card-content grey darken-2" style="padding:8px;">
-    <p class="grey-text text-darken-3">
-      <a *ngIf="firebase.currentUser==null" class="grey-text text-darken-3" routerLink="/home/login" routerLinkActive="active">
-        LOGIN
-      </a>
-      <a *ngIf="firebase.currentUser!=null" class="grey-text text-darken-3" routerLink="/home/upload" routerLinkActive="active">
-        UPLOAD  |
-      </a>
-      <a *ngIf="firebase.currentUser!=null" class="grey-text text-darken-3" (click)="logout()" style="cursor:pointer;">
-        LOGOUT
-      </a>
-    </p>
-  </div>
-</div>
+<!--<div id="mobile-footer" style="z-index:3;position:fixed;bottom:0;width:100%;margin:0;" class="card fadein center-align hide-on-med-and-up">-->
+  <!--<div class="card-content grey darken-2" style="padding:8px;">-->
+    <!--<p class="grey-text text-darken-3">-->
+      <!--<a *ngIf="firebase.currentUser==null" class="grey-text text-darken-3" routerLink="/home/login" routerLinkActive="active">-->
+        <!--LOGIN-->
+      <!--</a>-->
+      <!--<a *ngIf="firebase.currentUser!=null" class="grey-text text-darken-3" routerLink="/home/upload" routerLinkActive="active">-->
+        <!--UPLOAD  |-->
+      <!--</a>-->
+      <!--<a *ngIf="firebase.currentUser!=null" class="grey-text text-darken-3" (click)="logout()" style="cursor:pointer;">-->
+        <!--LOGOUT-->
+      <!--</a>-->
+    <!--</p>-->
+  <!--</div>-->
+<!--</div>-->
 
 
