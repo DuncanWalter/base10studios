@@ -36,7 +36,12 @@ export class B10ArticleComponent implements OnInit {
 
     B10HeaderComponent.paint(this.article.color);
 
-    $("#content").load('../../assets/articles/' + this.article.path + '/article.txt');
+    let content = $("#content");
+
+    content.load('../../assets/articles/' + this.article.path + '/article.txt', ()=>{
+      content.children("hr").css("margin-bottom","1.5rem").css("margin-top","1.5rem");
+      content.children("p" ).css("margin-bottom","1.5rem").css("text-indent","2.5em");
+    });
 
   }
 

@@ -26,10 +26,10 @@ let javaScript : any = {}; //'JavaScript';
 javaScript.title = 'In Praise of JavaScript';
 javaScript.path = 'JavaScript';
 javaScript.type = 'Rambling';
-javaScript.color = "rgba(13,87,161,1)";
-javaScript.bgColorLight = "rgba(226,239,252,1)";
-javaScript.bgColorDark = "rgba(145,198,250,1)";
-javaScript.bgColorMed = "rgba(187,219,250,1)";
+javaScript.color = "rgba(161,13,13,1)";
+javaScript.bgColorLight = "rgba(252,226,226,1)";
+javaScript.bgColorDark = "rgba(250,145,145,1)";
+javaScript.bgColorMed = "rgba(250,187,187,1)";
 
 let base10 : any = {}; //'Base10';
 base10.title = 'Base 10 Studios';
