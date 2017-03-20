@@ -8,17 +8,27 @@
   src: url(assets/fonts/chosence.regular.otf);
 }
 html {
-  font-family: Roboto, sans-serif;
-  font-size: 12pt;
-  color: #1a1a1a;
+    font-family: Roboto, sans-serif;
+    font-size: 12pt;
+    color: #1a1a1a;
+    padding: 0;
+    margin: 0;
 }
 body {
-  overflow: hidden;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+a, a p, a b p, a b {
+    color: inherit;
+    cursor: pointer;
+    text-decoration: none !important;
 }
 h1 {
   font-family: Chosence, Roboto, sans-serif;
   font-size: 42pt;
-  margin: 7pt 14pt 7pt;
+  margin: 7pt 14pt 0;
   letter-spacing: 5px;
   text-align: center;
 }
@@ -56,22 +66,6 @@ b.norm {
   color: #FAFAFA;
 }
 
-hr {
-  height: 2px;
-  border: none;
-  width: 100%;
-  margin: 0;
-}
-.dark hr {
-  background-color: #FAFAFA;
-}
-.light hr {
-  background-color: #222222;
-}
-
-.prose p{
-  text-indent: 24pt;
-}
 .row {
   margin:0;
   display: -webkit-flex;
@@ -99,26 +93,9 @@ hr {
 .f11{ flex: 11;}
 .f12{ flex: 12;}
 
-/*@media not screen and (min-width: 480px){*/
-  /*.container {*/
-    /*width: 100%;*/
-  /*}*/
-/*}*/
-/*@media not screen and (min-width: 1080px){*/
-  /*.container {*/
-    /*width: 85%;*/
-  /*}*/
-/*}*/
-/*@media screen and (min-width: 1080px){*/
-  /*.container {*/
-    /*width: 65%;*/
-  /*}*/
-/*}*/
-
 .padded {
   padding: 7pt;
 }
-
 
 .button {
   display: block;
@@ -160,39 +137,17 @@ hr {
 .cascade * {
   opacity: 0;
 }
-/*.cascading *:not(.cascading) {*/
-  /*transition: opacity 0s;*/
-  /*opacity: 0;*/
-/*}*/
 
-
-html {
-  padding: 0;
-  margin: 0;
-}
-body {
-  padding: 0;
-  margin: 0;
-}
-
-
-a, a p, a b p, a b {
-  color: inherit;
-  cursor: pointer;
-  text-decoration: none !important;
-}
 
 
 .hover {
   position: relative;
   transition: 0.45s ease;
 
-
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-
 
   white-space: nowrap;
   text-overflow: clip;
@@ -233,35 +188,4 @@ a, a p, a b p, a b {
     border: solid 2pt #3a3a3a;
     color: #FAFAFA;
     top: -18pt;
-    /*border-radius: 48pt;*/
 }
-
-
-/*.TL {*/
-  /*display: flex;*/
-  /*flex-direction: column;*/
-  /*text-align: left;*/
-/*}*/
-/*.TR {*/
-  /*display: flex;*/
-  /*flex-direction: column;*/
-  /*text-align: right;*/
-/*}*/
-/*.BL {*/
-  /*display: flex;*/
-  /*flex-direction: column-reverse;*/
-  /*text-align: left;*/
-/*}*/
-/*.BR {*/
-  /*display: flex;*/
-  /*flex-direction: column-reverse;*/
-  /*text-align: right;*/
-/*}*/
-
-/*.cascade, .cascade * {*/
-  /*!*will animate a cascaded fading entrance...*!*/
-  /*opacity: 0.0;*/
-  /*position: relative;*/
-  /*top: 20vh;*/
-
-/*}*/
