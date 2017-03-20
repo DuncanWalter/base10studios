@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" style="overflow: hidden">
+<head>
+    <meta charset="UTF-8">
+    <title>Enigmagon</title>
+    <link href="./styles.css" rel="stylesheet">
+    <!--<script src="https://www.youtube.com/iframe_api"></script>-->
+    <script src="lib/jquery-3.1.1.min.js"></script>
+    <script src="lib/require.min.js"></script>
+    <!--<script src="lib/TWGL.min.js"></script>-->
+</head>
+<body class="dark" style="background-color: #000000">
+
+    <div class="col f1">
+        <div class="row" style="padding-top:0.65rem">
+            <p><b>The Enigmagon</b></p>
+            <p style="text-align: right"><b>Duncan Walter</b></p>
+        </div>
+        <div class="row f1">
+
+            <div class="col">
+                <p></p>
+                <div class="achievement"><b>SPACE: PAUSE</b></div>
+                <div class="achievement"><b>LEFT|RIGHT: SPIN</b></div>
+                <div class="achievement"><b>UP|DOWN: ENERGY</b></div>
+                <div class="achievement"><b>S: SPLIT VERTICES</b></div>
+                <div class="achievement"><b>0-9: PLAY TRACK</b></div>
+                <div class="achievement"><b>H: HIDE CLUTTER</b></div>
+                <div class="achievement"><b>A: USE AMBIENT</b></div>
+            </div>
+            <div class="col f1">
+
+            </div>
+            <div class="col">
+                <p></p>
+                <div id="next" class="button"><b>NEW ENIGMAGON</b></div>
+            </div>
+        </div>
+    </div>
+    <canvas id="enigmagon" class="webgl"></canvas>
+    <script src="src/Main-Enigmagon.js"></script>
+</body>
+</html>

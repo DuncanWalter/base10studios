@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" style="overflow: hidden">
+<head>
+    <meta charset="UTF-8">
+    <title>Brave New World</title>
+    <link href="./styles.css" rel="stylesheet">
+    <script src="lib/jquery-3.1.1.min.js"></script>
+    <script src="lib/require.min.js"></script>
+</head>
+<body class="dark" style="z-index:0;">
+
+    <div class="row" style="width:100%;height:100%;">
+        <div class="col">
+            <p style="text-align: left "><b>HEX SCAPE</b></p>
+            <div class="f1"></div>
+        </div>
+        <div class="f1"></div>
+        <div class="col">
+            <p style="text-align: right"><b>Duncan H. Walter<br>G. Eli Jergensen</b></p>
+            <div class="f1"></div>
+            <div id="new-hex-scape" class="button">NEW WORLD</div>
+        </div>
+    </div>
+
+    <canvas id="map-canvas" class="webgl"></canvas>
+
+    <div class="dark lay-over row">
+        <div class="f1"></div>
+        <div class="col f2">
+            <p></p>
+            <div class="col" style="height:auto">
+                <form>
+                    <label><b>WIDTH</b>
+                        <input type="range" id="width" min="15" max="115" step="1">
+                    </label>
+                    <label><b>HEIGHT</b>
+                        <input type="range" id="height" min="10" max="70" step="1">
+                    </label>
+                    <label><b>CHAOS</b>
+                        <input type="range" id="chaos" min="0" max="0.15" step="0.004">
+                    </label>
+                    <label><b>LANDMASS</b>
+                        <input type="range" id="landmass" min="0" max="1" step="0.04">
+                    </label>
+                    <div style="height:18pt"></div>
+                    <div id="create" class="button"><b>CREATE</b></div>
+                </form>
+            </div>
+            <p></p>
+        </div>
+        <div class="f1"></div>
+    </div>
+
+    <script src="src/Main-Map-Generator.js"></script>
+</body>
+</html>

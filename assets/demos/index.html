@@ -1,0 +1,165 @@
+
+<!doctype html>
+<!--suppress CheckImageSize -->
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>4X-XX</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--<link href="utils.js" type="javascript" />-->
+</head>
+
+<div>
+    <img hidden id="error" src="Junk Pixel Art/purple.png" width="48" height="48">
+
+    <img hidden id="red" src="Junk Pixel Art/red.png" width="48" height="48">
+    <img hidden id="red-hills" src="Junk Pixel Art/red-hills.png" width="48" height="48">
+    <img hidden id="red-mountains" src="Junk Pixel Art/red-mountains.png" width="48" height="48">
+    <img hidden id="red-valleys" src="Junk Pixel Art/red-valleys.png" width="48" height="48">
+    <img hidden id="red-rivers" src="Junk Pixel Art/red-rivers.png" width="48" height="48">
+
+    <img hidden id="orange" src="Junk Pixel Art/orange.png" width="48" height="48">
+    <img hidden id="orange-hills" src="Junk Pixel Art/orange-hills.png" width="48" height="48">
+    <img hidden id="orange-mountains" src="Junk Pixel Art/orange-mountains.png" width="48" height="48">
+    <img hidden id="orange-valleys" src="Junk Pixel Art/orange-valleys.png" width="48" height="48">
+    <img hidden id="orange-rivers" src="Junk Pixel Art/orange-rivers.png" width="48" height="48">
+
+    <img hidden id="yellow" src="Junk Pixel Art/yellow.png" width="48" height="48">
+    <img hidden id="yellow-hills" src="Junk Pixel Art/yellow-hills.png" width="48" height="48">
+    <img hidden id="yellow-mountains" src="Junk Pixel Art/yellow-mountains.png" width="48" height="48">
+    <img hidden id="yellow-valleys" src="Junk Pixel Art/yellow-valleys.png" width="48" height="48">
+    <img hidden id="yellow-rivers" src="Junk Pixel Art/yellow-rivers.png" width="48" height="48">
+</div>
+<div>
+
+    <img hidden id="green" src="Junk Pixel Art/green.png" width="48" height="48">
+    <img hidden id="green-hills" src="Junk Pixel Art/green-hills.png" width="48" height="48">
+    <img hidden id="green-mountains" src="Junk Pixel Art/green-mountains.png" width="48" height="48">
+    <img hidden id="green-valleys" src="Junk Pixel Art/green-valleys.png" width="48" height="48">
+    <img hidden id="green-rivers" src="Junk Pixel Art/green-rivers.png" width="48" height="48">
+
+    <img hidden id="blue" src="Junk Pixel Art/blue.png" width="48" height="48">
+    <img hidden id="blue-hills" src="Junk Pixel Art/blue-hills.png" width="48" height="48">
+    <img hidden id="blue-mountains" src="Junk Pixel Art/blue-mountains.png" width="48" height="48">
+    <img hidden id="blue-valleys" src="Junk Pixel Art/blue-valleys.png" width="48" height="48">
+    <img hidden id="blue-rivers" src="Junk Pixel Art/blue-rivers.png" width="48" height="48">
+
+    <img hidden id="purple" src="Junk Pixel Art/purple.png" width="48" height="48">
+    <img hidden id="purple-hills" src="Junk Pixel Art/purple-hills.png" width="48" height="48">
+    <img hidden id="purple-mountains" src="Junk Pixel Art/purple-mountains.png" width="48" height="48">
+    <img hidden id="purple-valleys" src="Junk Pixel Art/purple-valleys.png" width="48" height="48">
+    <img hidden id="purple-rivers" src="Junk Pixel Art/purple-rivers.png" width="48" height="48">
+</div>
+<div>
+
+    <img hidden id="graeymun" src="Junk Pixel Art/graeymun.png" width="48" height="48">
+    <img hidden id="graeymun-hills" src="Junk Pixel Art/graeymun-hills.png" width="48" height="48">
+    <img hidden id="graeymun-mountains" src="Junk Pixel Art/graeymun-mountains.png" width="48" height="48">
+    <img hidden id="graeymun-valleys" src="Junk Pixel Art/graeymun-valleys.png" width="48" height="48">
+    <img hidden id="graeymun-rivers" src="Junk Pixel Art/graeymun-rivers.png" width="48" height="48">
+
+    <img hidden id="water" src="Junk Pixel Art/water.png" width="48" height="48">
+    <img hidden id="deep-water" src="Junk Pixel Art/deep-water.png" width="48" height="48">
+
+    <img hidden id="food" src="Junk Pixel Art/food.png" width="20" height="20">
+    <img hidden id="industry" src="Junk Pixel Art/industry.png" width="20" height="20">
+    <img hidden id="thought" src="Junk Pixel Art/thought.png" width="20" height="20">
+    <img hidden id="plat" src="Junk Pixel Art/plat.png" width="20" height="20">
+
+    <img hidden id="army" src="Junk Pixel Art/army.png" width="48" height="48">
+    <img hidden id="empireOverlay" src="Junk Pixel Art/empireOverlay.png" width="48" height="48">
+
+</div>
+<div>
+    <canvas id="canvas" width="1920" height="1080" style="border: 0 solid black; position: absolute; left: 0; top: 0; margin: 0;" tabindex="0">
+    </canvas>
+</div>
+
+<script>
+    /*This tag contains all of the HTML variables*/
+
+    /*HTML + Document Accessors*/
+    var canvas = document.getElementById("canvas"); //ID for canvas element
+    var canvasContext= canvas.getContext("2d"); //Used to call draw functions
+    var canvasWidth = parseInt(canvas.getAttribute("width")); //number of pixels in width of canvas
+    var canvasHeight= parseInt(canvas.getAttribute("height")); //number of pixels in height of canvas
+
+    /*HTML DOM for images*/
+    var red = document.getElementById("red"); //ID for red-tile
+    var redHills = document.getElementById("red-hills"); //ID for red-hills-tile
+    var redMountains = document.getElementById("red-mountains"); //ID for red-mountains-tile
+    var redValleys = document.getElementById("red-valleys"); //ID for red-valleys-tile
+    var redRivers = document.getElementById("red-rivers"); //ID for red-rivers-tile
+    var orange = document.getElementById("orange"); //ID for orange-tile
+    var orangeHills = document.getElementById("orange-hills"); //ID for orange-hills-tile
+    var orangeMountains = document.getElementById("orange-mountains"); //ID for orange-mountains-tile
+    var orangeValleys = document.getElementById("orange-valleys"); //ID for orange-valleys-tile
+    var orangeRivers = document.getElementById("orange-rivers"); //ID for orange-rivers-tile
+    var yellow = document.getElementById("yellow"); //ID for yellow-tile
+    var yellowHills = document.getElementById("yellow-hills"); //ID for yellow-hills-tile
+    var yellowMountains = document.getElementById("yellow-mountains"); //ID for yellow-mountains-tile
+    var yellowValleys = document.getElementById("yellow-valleys"); //ID for yellow-valleys-tile
+    var yellowRivers = document.getElementById("yellow-rivers"); //ID for yellow-rivers-tile
+    var green = document.getElementById("green"); //ID for green-tile
+    var greenHills = document.getElementById("green-hills"); //ID for green-hills-tile
+    var greenMountains = document.getElementById("green-mountains"); //ID for green-mountains-tile
+    var greenValleys = document.getElementById("green-valleys"); //ID for green-valleys-tile
+    var greenRivers = document.getElementById("green-rivers"); //ID for green-rivers-tile
+    var blue = document.getElementById("blue"); //ID for blue-tile
+    var blueHills = document.getElementById("blue-hills"); //ID for blue-hills-tile
+    var blueMountains = document.getElementById("blue-mountains"); //ID for blue-mountains-tile
+    var blueValleys = document.getElementById("blue-valleys"); //ID for blue-valleys-tile
+    var blueRivers = document.getElementById("blue-rivers"); //ID for blue-rivers-tile
+    var purple = document.getElementById("purple"); //ID for purple-tile
+    var purpleHills = document.getElementById("purple-hills"); //ID for purple-hills-tile
+    var purpleMountains = document.getElementById("purple-mountains"); //ID for purple-mountains-tile
+    var purpleValleys = document.getElementById("purple-valleys"); //ID for purple-valleys-tile
+    var purpleRivers = document.getElementById("purple-rivers"); //ID for purple-rivers-tile
+    var graeymun = document.getElementById("graeymun"); //ID for graeymun-tile
+    var graeymunHills = document.getElementById("graeymun-hills"); //ID for graeymun-hills-tile
+    var graeymunMountains = document.getElementById("graeymun-mountains"); //ID for graeymun-mountains-tile
+    var graeymunValleys = document.getElementById("graeymun-valleys"); //ID for graeymun-valleys-tile
+    var graeymunRivers = document.getElementById("graeymun-rivers"); //ID for graeymun-rivers-tile
+    var water = document.getElementById("water"); //ID for water-tile
+    var deepWater = document.getElementById("deep-water"); //ID for deep-water-tile
+
+</script>
+
+<!-- Include other js files -->
+<script src = "GameWorld.js"> </script>
+<script src = "GamePlayer.js"></script>
+
+<script>
+
+    /*Main Program*/
+
+    var world = new World();
+
+    var settings = {
+
+        panSpeed:  85,
+        zoomSpeed: 1.37,
+        FramesPerSecond: 60,    // how many frames per second things should* run at while playing
+        recoveryAccelerator: 3, // this determines how many times per frame the user will consider drawing if there was a botched draw cycle
+        cameraStartX: 0,
+        cameraStartY: (world.height - 1) / 2.66 * world.tileSize,
+        cameraStartZ: canvasHeight / (world.height + 0.333) / world.tileSize / 0.75,
+        movementAllowance: 10
+
+    };
+
+    var user = new User(world, settings);
+
+</script>
+
+<script>
+
+    // focuses the page on loading (mostly so that we don't have to select the window)
+    window.onload = function (){
+        document.getElementById("canvas").focus();
+    };
+
+</script>

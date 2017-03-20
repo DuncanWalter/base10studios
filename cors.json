@@ -1,7 +1,0 @@
-[
-  {
-    "origin": ["http://localhost:4200","http://base10studios.com"],
-    "method": ["GET"],
-    "maxAgeSeconds": 3600
-  }
-]

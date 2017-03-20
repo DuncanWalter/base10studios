@@ -1,0 +1,287 @@
+@font-face {
+    font-family: 'Roboto';
+    /*src: url(assets/roboto/roboto-regular.ttf);*/
+}
+@font-face {
+    font-family: 'Chosence';
+    src: url(assets/chosence.regular.otf);
+}
+html {
+    font-family: Roboto, sans-serif;
+    font-size: 12pt;
+    color: #1a1a1a;
+}
+h1 {
+    font-family: Chosence, Roboto, sans-serif;
+    font-size: 42pt;
+    margin: 1.3rem;
+    letter-spacing: 5px;
+    text-align: center;
+}
+b {
+    font-size: 13pt;
+    letter-spacing: 2px;
+    font-family: Chosence, Roboto, sans-serif;
+}
+b.norm {
+    font-size: 12pt;
+    letter-spacing: 0;
+    font-family: Roboto, sans-serif;
+}
+body {
+    margin: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+    height: 100vh;
+    background-color: #444444;
+    display: flex;
+    flex-direction: column;
+}
+.row {
+    margin:0;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+.col {
+    margin:0;
+    height: 100%;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+}
+.padded {
+    padding: 0.65rem;
+}
+.padded >> .spaced {
+    margin: 0.65rem;
+}
+hr {
+    width: 100%;
+    height: 2px;
+    border: none;
+    margin: 0;
+}
+p {
+    line-height: 1.3;
+    margin: 0.65rem 1.3rem 0.65rem;
+    font-size: inherit;
+    flex: 1;
+}
+div {
+    font-size: inherit;
+}
+.box {
+    transition: background-color 0.15s ease;
+}
+.light .box {
+    border: solid #222222 2px;
+    margin: 0 1.95rem;
+    padding: 0.65rem 0 0.65rem;
+    background-color: #FAFAFA;
+}
+.light .box:hover {
+    background-color: rgba(22,22,22,0.08);
+}
+.dark .box {
+    border: 2px solid #FAFAFA;
+    margin: 1.3rem;
+    padding: 0.65rem 0 0.65rem;
+    background-color: #222222;
+}
+.dark .box:hover {
+    background-color: rgba(249,249,249,0.08);
+}
+.light {
+    background-color: #FAFAFA;
+    color: #1A1A1A;
+}
+.dark {
+    background-color: #222222;
+    color: #FAFAFA;
+}
+.dark hr {
+    background-color: #FAFAFA;
+}
+.light hr {
+    background-color: #222222;
+}
+.prose p{
+    text-indent: 2rem;
+}
+.f1 { flex: 1  ; }
+.f2 { flex: 2  ; }
+.f3 { flex: 3  ; }
+.f4 { flex: 4  ; }
+.f5 { flex: 5  ; }
+.f6 { flex: 6  ; }
+.f7 { flex: 7  ; }
+.f8 { flex: 8  ; }
+.f9 { flex: 9  ; }
+.f10{ flex: 10 ; }
+.f11{ flex: 11 ; }
+.f12{ flex: 12 ; }
+.cascade, .cascade * {
+    /*will animate a cascaded fading entrance...*/
+    opacity: 0.0;
+    position: relative;
+    top: 20vh;
+    overflow: hidden;
+}
+canvas.webgl {
+    position: absolute;
+    margin: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.6s ease;
+    z-index: -3;
+}
+.square {
+    position: relative;
+    width: 100%;
+}
+.square:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+}
+div.hudright {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    top: auto !important;
+    height: auto !important;
+    padding: 0 !important;
+    background-color: transparent !important;
+}
+div.achievement {
+    font-family: Chosence, Roboto, sans-serif;
+    width: 14.4pt;
+    transition: 0.45s ease;
+    position: relative;
+    text-align: center;
+    overflow-clip: true;
+    white-space: nowrap;
+    padding: 2pt 2pt 0;
+    margin: 0 1.3rem 1.3rem;
+    color: transparent;
+    text-overflow: clip;
+}
+div.achievement::after {
+    color: rgba(255,255,255,0);
+}
+div.achievement:not(.complete) {
+    border: solid 2px #FAFAFA;
+
+    text-align: center;
+    color: rgba(255,255,255,0);
+}
+div.achievement:not(.complete):hover::after {
+    color: #FAFAFA;
+}
+div.achievement:not(.complete):hover {
+    width: 6rem;
+}
+div.achievement:not(.complete)::after {
+    content: "REVEAL";
+    position: absolute;
+    display:block;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    padding: 2pt 2pt 0;
+    transition: 0.45s ease;
+}
+div.achievement.complete {
+    border: solid 2px #FAFAFA;
+    background-color: #FAFAFA;
+}
+div.achievement.complete:hover {
+    color: #222222;
+}
+div.achievement:hover {
+    width: 12rem;
+}
+.button {
+    padding: 7pt 7pt 4pt;
+    text-align: center;
+    font-family: Chosence, Roboto, sans-serif;
+    font-size: 13pt;
+    background-color: transparent;
+    border: solid 2px #FAFAFA;
+    transition: 0.45s ease;
+    margin: 0 1.3rem 1.3rem;
+    color: #FAFAFA;
+    cursor: pointer;
+}
+.button:hover {
+    background-color: #FAFAFA;
+    color: #222222;
+    cursor: pointer;
+}
+input {
+    background-color: transparent;
+    padding: 7pt 0 4pt;
+    text-align: center;
+    font-family: Chosence, Roboto, sans-serif;
+    font-size: 13pt;
+    border: none;
+    color: #FAFAFA;
+}
+.lay-over {
+    transition: 0.7s;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -7;
+    opacity: 0;
+}
+
+
+
+
+
+
+
+
+
+input[type=range] {
+    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+    width: 100%; /* Specific width is required for Firefox. */
+    height: 2pt;
+    padding: 0;
+    margin: 10pt 0 26pt;
+    background: #FAFAFA; /* Otherwise white in Chrome */
+}
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    transition: 0.45s;
+    background-color: #222222;
+    width: 18pt;
+    height: 18pt;
+    cursor: pointer;
+    border: solid #FAFAFA 2pt;
+}
+input[type=range]::-webkit-slider-thumb:hover,
+input[type=range]::-webkit-slider-thumb:focus,
+input[type=range]::-webkit-slider-thumb:active {
+    background-color: #FAFAFA;
+}
+
+input[type=range]:focus, .button:focus {
+    outline: none;
+}
+
+input[type=range]::-ms-track {
+    width: 100%;
+    cursor: pointer;
+
+    /* Hides the slider so custom styles can be added */
+    background: #FAFAFA;
+    border-color: transparent;
+    color: transparent;
+}

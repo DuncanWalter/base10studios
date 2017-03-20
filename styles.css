@@ -1,0 +1,267 @@
+
+@font-face {
+  font-family: 'Roboto';
+  src: url(assets/fonts/roboto/roboto-regular.ttf);
+}
+@font-face {
+  font-family: 'Chosence';
+  src: url(assets/fonts/chosence.regular.otf);
+}
+html {
+  font-family: Roboto, sans-serif;
+  font-size: 12pt;
+  color: #1a1a1a;
+}
+body {
+  overflow: hidden;
+}
+h1 {
+  font-family: Chosence, Roboto, sans-serif;
+  font-size: 42pt;
+  margin: 7pt 14pt 7pt;
+  letter-spacing: 5px;
+  text-align: center;
+}
+p {
+  line-height: 1.3;
+  margin: 7pt 13pt 4pt;
+  font-size: inherit;
+}
+b {
+  font-size: 13pt;
+  letter-spacing: 2px;
+  font-family: Chosence, Roboto, sans-serif;
+}
+b.norm {
+  font-size: 12pt;
+  letter-spacing: 0;
+  font-family: Roboto, sans-serif;
+}
+
+
+.light {
+  background-color: #FAFAFA;
+  color: #1A1A1A;
+}
+.dark {
+  background-color: #222222;
+  color: #FAFAFA;
+}
+.orange {
+  background-color: #eec852;
+  color: #1A1A1A;
+}
+.teal {
+  background-color: #1a6184;
+  color: #FAFAFA;
+}
+
+hr {
+  height: 2px;
+  border: none;
+  width: 100%;
+  margin: 0;
+}
+.dark hr {
+  background-color: #FAFAFA;
+}
+.light hr {
+  background-color: #222222;
+}
+
+.prose p{
+  text-indent: 24pt;
+}
+.row {
+  margin:0;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.col {
+  margin:0;
+  height: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+}
+.f1 { flex: 1;}
+.f2 { flex: 2;}
+.f3 { flex: 3;}
+.f4 { flex: 4;}
+.f5 { flex: 5;}
+.f6 { flex: 6;}
+.f7 { flex: 7;}
+.f8 { flex: 8;}
+.f9 { flex: 9;}
+.f10{ flex: 10;}
+.f11{ flex: 11;}
+.f12{ flex: 12;}
+
+/*@media not screen and (min-width: 480px){*/
+  /*.container {*/
+    /*width: 100%;*/
+  /*}*/
+/*}*/
+/*@media not screen and (min-width: 1080px){*/
+  /*.container {*/
+    /*width: 85%;*/
+  /*}*/
+/*}*/
+/*@media screen and (min-width: 1080px){*/
+  /*.container {*/
+    /*width: 65%;*/
+  /*}*/
+/*}*/
+
+.padded {
+  padding: 7pt;
+}
+
+
+.button {
+  display: block;
+  padding: 7pt 7pt 4pt;
+  text-align: center;
+  font-family: Chosence, Roboto, sans-serif;
+  font-size: 13pt;
+  background-color: transparent;
+  cursor: pointer;
+  transition: 0.45s ease;
+  margin: 7pt;
+  width: 100pt;
+}
+
+.light .button {
+  border: solid 2px #222222;
+}
+.light .button:hover {
+  background-color: #222222;
+  color: #FAFAFA;
+}
+.dark .button {
+  border: solid 2px #FAFAFA;
+}
+.dark .button:hover {
+  background-color: #FAFAFA;
+  color: #222222;
+}
+
+
+@keyframes cascade {
+  0%   {opacity: 0; transform: translateY(100vh); }
+  100% {opacity: 1; transform: translateY(0vh); }
+}
+.cascade {
+  transition: opacity 0s;
+  opacity: 0;
+}
+.cascade * {
+  opacity: 0;
+}
+/*.cascading *:not(.cascading) {*/
+  /*transition: opacity 0s;*/
+  /*opacity: 0;*/
+/*}*/
+
+
+html {
+  padding: 0;
+  margin: 0;
+}
+body {
+  padding: 0;
+  margin: 0;
+}
+
+
+a, a p, a b p, a b {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none !important;
+}
+
+
+.hover {
+  position: relative;
+  transition: 0.45s ease;
+
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+
+  white-space: nowrap;
+  text-overflow: clip;
+  overflow: hidden;
+}
+.hover .cover {
+  position: absolute;
+  left:0;right:0;top:0;bottom:0;
+
+  z-index: -1;
+  transition: 0.45s ease;
+}
+.hover:hover .cover {
+  opacity: 0.19;
+}
+.hover .image {
+  position: absolute;
+  left:0;right:0;top:0;bottom:0;
+  z-index: -2;
+}
+
+.TEN {
+    z-index: 1;
+    height: 24pt;
+    width: 24pt;
+    background-color: transparent;
+    color: #FAFAFA;
+    transition: 0.45s ease;
+    border-radius: 50%;
+    position: relative;
+    top: -12pt;
+    cursor: pointer;
+    border: solid transparent 2pt;
+}
+.TEN:hover {
+    height: 36pt;
+    width: 36pt;
+    border: solid 2pt #3a3a3a;
+    color: #FAFAFA;
+    top: -18pt;
+    /*border-radius: 48pt;*/
+}
+
+
+/*.TL {*/
+  /*display: flex;*/
+  /*flex-direction: column;*/
+  /*text-align: left;*/
+/*}*/
+/*.TR {*/
+  /*display: flex;*/
+  /*flex-direction: column;*/
+  /*text-align: right;*/
+/*}*/
+/*.BL {*/
+  /*display: flex;*/
+  /*flex-direction: column-reverse;*/
+  /*text-align: left;*/
+/*}*/
+/*.BR {*/
+  /*display: flex;*/
+  /*flex-direction: column-reverse;*/
+  /*text-align: right;*/
+/*}*/
+
+/*.cascade, .cascade * {*/
+  /*!*will animate a cascaded fading entrance...*!*/
+  /*opacity: 0.0;*/
+  /*position: relative;*/
+  /*top: 20vh;*/
+
+/*}*/
